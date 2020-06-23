@@ -1,0 +1,31 @@
+.container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    color: white;
+}
+
+.mainHeader {
+    font-size: 12vw;
+    margin: 10px 0 10px 0;
+    text-align: center;
+}
+
+.subHeader {
+    font-size: 10vw;
+    margin: 10px 0 10px 0;
+    margin-left: calc(
+        (100vw - (12vw * 8))
+    ); /* don't know how I got this but it works! */
+}
+
+.oneLine {
+    display: inline-block;
+}
+
+.alignRight {
+    float: right;
+    margin: 10px 0 10px 0;
+    margin-right: calc((100vw - (12vw * 8)));
+}

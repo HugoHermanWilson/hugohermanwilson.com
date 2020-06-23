@@ -1,6 +1,7 @@
 import React from 'react';
 import SplashLayout from '../layouts/splash';
 import SplashImage from '../components/splash/splashImage.js';
+import Menu from '../components/menu.js';
 
 class SplashPage extends React.Component {
 
@@ -26,6 +27,7 @@ class SplashPage extends React.Component {
           <div>
             <SplashLayout>
               <SplashImage visiblity={this.state.visibility} />
+              <Menu />
             </SplashLayout>
           </div>
         );

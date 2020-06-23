@@ -1,0 +1,9 @@
+@import url(https://fonts.googleapis.com/css?family=Staatliches);
+
+.title-font {
+    font-family: 'Staatliches', sans-serif;
+}
+
+.pink {
+    color: #FF69B4;
+}
