@@ -24,12 +24,12 @@ class SplashPage extends React.Component {
 
     render(){
         return (
-          <div>
-            <SplashLayout>
-              <SplashImage visiblity={this.state.visibility} />
-              <Menu />
-            </SplashLayout>
-          </div>
+            <div>
+                <SplashLayout>
+                    <SplashImage visiblity={this.state.visibility} />
+                    <Menu visiblity={this.state.visibility} />
+                </SplashLayout>
+            </div>
         );
     }
 }

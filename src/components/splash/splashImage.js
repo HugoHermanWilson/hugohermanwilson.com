@@ -28,10 +28,6 @@ export default function SplashImage(props) {
 
   return (
     <div id="SplashImage" className={css.container}>
-      {/* <img
-        className={`${css.image} ${css[props.visiblity]}`}
-        src={image}
-      /> */}
       <Img
         className={`${css.image} ${css[props.visiblity]}`}
         height="100vh"

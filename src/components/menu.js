@@ -21,13 +21,22 @@ export default class Menu extends React.Component {
 
     render() {
         return (
-            <div id="Menu" className={`title-font ${css.container}`}>
+            <div
+                id="Menu"
+                className={`title-font ${css.container} ${
+                    css[this.props.visiblity]
+                }`}
+            >
                 <h1 className={css.mainHeader}>Hugo Herman-Wilson</h1>
                 <h2 className={`${css.oneLine} ${css.subHeader}`}>Baritone</h2>
                 <h2
                     className={`${css.oneLine} ${css.subHeader} ${css.alignRight} ${css.pink}`}
                 >
-                    <Icon name="bars" className="pink" onClick={this.toggleMenuOpen} />
+                    <Icon
+                        name="bars"
+                        className="pink"
+                        onClick={this.toggleMenuOpen}
+                    />
                 </h2>
                 <MobileMenu
                     toggleMenu={this.toggleMenuOpen}
