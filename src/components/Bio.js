@@ -8,12 +8,16 @@ class Bio extends React.Component {
       <p>
         <img
           src={profilePic}
-          alt={`Kyle Mathews`}
+          alt={`Hugo Herman-Wilson`}
+          style={{
+            width:'150px',
+            height:'150px',
+            borderRadius: '100%'
+          }}
         />
-        Written by <strong>Kyle Mathews</strong> who lives and works in San
-        Francisco building useful things.{' '}
-        <a href="https://twitter.com/kylemathews">
-          You should follow him on Twitter
+        Hi, I'm <strong>Hugo Herman-Wilson</strong> and I'm an absolute lad.
+        <a href="https://twitter.com/HugoBaritone">
+          You should follow me on Twitter
         </a>
       </p>
     )
