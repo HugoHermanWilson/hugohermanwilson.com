@@ -1,0 +1,25 @@
+.container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  z-index: -99;
+  background-color: #000000;
+}
+
+.image {
+  height: 100vh;
+  transition: opacity 0.5s linear;
+}
+
+.hidden {
+    opacity:0;
+}
+
+.visible {
+    opacity:1;
+}
