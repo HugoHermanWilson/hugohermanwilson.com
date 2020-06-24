@@ -27,14 +27,20 @@ export default class Menu extends React.Component {
                     css[this.props.visiblity]
                 }`}
             >
-                <h1 className={css.mainHeader}>Hugo Herman-Wilson</h1>
-                <h2 className={`${css.oneLine} ${css.subHeader}`}>Baritone</h2>
+                <h1 className={`black-background ${css.mainHeader}`}>
+                    Hugo Herman-Wilson
+                </h1>
+                <h2
+                    className={`black-background ${css.oneLine} ${css.subHeader}`}
+                >
+                    Baritone
+                </h2>
                 <h2
                     className={`${css.oneLine} ${css.subHeader} ${css.alignRight} ${css.pink}`}
                 >
                     <Icon
                         name="bars"
-                        className="pink"
+                        className="pink black-background"
                         onClick={this.toggleMenuOpen}
                     />
                 </h2>
