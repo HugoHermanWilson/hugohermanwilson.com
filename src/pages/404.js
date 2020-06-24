@@ -8,9 +8,7 @@ export default function Missing404(props) {
     return (
         <div>
             <style>
-                body {
-                    background: black;
-                }
+                {"body{ background: black;}"}
             </style>
             <Template>
                 <Menu />
