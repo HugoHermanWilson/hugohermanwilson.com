@@ -1,11 +1,28 @@
 @import url(https://fonts.googleapis.com/css?family=Staatliches);
 
+body {
+    background: black;
+    font-family: sans-serif;
+}
+
 .title-font {
     font-family: 'Staatliches', sans-serif;
 }
 
 .pink {
-    color: #FF69B4;
+    color: #e03997;
+}
+
+.white {
+    color: white;
+}
+
+.large-text {
+    font-size: 4em;
+}
+
+.center-text {
+    text-align: center;
 }
 
 .black-background {

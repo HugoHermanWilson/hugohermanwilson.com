@@ -4,12 +4,12 @@ import Head from '../components/head';
 
 class Template extends React.Component {
   
-  render({children}) {
+  render() {
 
     return (
       <div>
         <Head />
-        {children}
+        {this.props.children}
       </div>
     )
   }

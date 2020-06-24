@@ -1,0 +1,10 @@
+.container {
+    margin: 200px 1em 1em 1em;
+    background-color: #2A2A2A;
+    padding: 2em 1em;
+}
+
+.pinkAccent {
+    border-top: #e03997 solid 3px;
+    border-bottom: #e03997 solid 3px;
+}
