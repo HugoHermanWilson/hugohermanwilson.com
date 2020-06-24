@@ -17,9 +17,10 @@ export default function Head() {
       render={data => {
         return (
             <Helmet>
-                <script 
-                  async
-                  src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GATSBY_GA_TRACKING_ID}`}
+                <html lang="en" />
+                <script
+                    async
+                    src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GATSBY_GA_TRACKING_ID}`}
                 />
                 <script>{`window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', '${process.env.GATSBY_GA_TRACKING_ID}');`}</script>
                 <meta charSet="utf-8" />
@@ -33,7 +34,7 @@ export default function Head() {
                     content="baritone, singer, opera, opera singer, contemporary opera, singer London, baritone London"
                 />
                 <script type="application/ld+json">
-                  {`{
+                    {`{
                     "@context": "http://schema.org",
                     "@type": "Person",
                     "email": "mailto:${process.env.GATSBY_EMAIL}",
@@ -42,7 +43,7 @@ export default function Head() {
                     "url": "http://www.hugohermanwilson.com",
                     "sameAs": ["https://twitter.com/hugobaritone"]\n}`}
                 </script>
-                <link rel="canonical" href="http://www.hugohermanwilson.com" />
+                <link rel="canonical" href="https://www.hugohermanwilson.com" />
             </Helmet>
         );
       }}
