@@ -25,6 +25,7 @@
 
 .item {
     margin: 10px;
+    text-decoration: none;
 }
 
 .item:first-child{
@@ -34,6 +35,13 @@
 .item:active{
     color: #e03997;
 }
+
+.item:visited{
+    color: white;
+    text-decoration: none;
+}
+
+
 
 .icon {
     position: absolute;
