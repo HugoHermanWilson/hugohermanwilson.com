@@ -32,15 +32,14 @@
     margin-top: 2em;
 }
 
-.item:active{
-    color: #e03997;
-}
-
 .item:visited{
     color: white;
     text-decoration: none;
 }
 
+.item:active{
+    color: #e03997;
+}
 
 
 .icon {
