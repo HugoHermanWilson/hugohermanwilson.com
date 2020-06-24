@@ -15,7 +15,6 @@ class SplashPage extends React.Component {
     componentDidMount(){
         setTimeout(
             () => {
-                console.log("3s")
                 this.setState({ visibility: 'visible' })
             },
             20
@@ -27,7 +26,7 @@ class SplashPage extends React.Component {
             <div>
                 <SplashLayout>
                     <SplashImage visiblity={this.state.visibility} />
-                    <Menu visiblity={this.state.visibility} />
+                    <Menu path={this.props.location.pathname} visiblity={this.state.visibility} />
                 </SplashLayout>
             </div>
         );

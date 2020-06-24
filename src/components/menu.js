@@ -19,7 +19,24 @@ export default class Menu extends React.Component {
         })
     }
 
+    getCorrectHeaderTag = () => {
+        if (this.props.path === '/'){
+            return (
+                <h1 className={`black-background ${css.mainHeader}`}>
+                    Hugo Herman-Wilson
+                </h1>
+            );
+        } else {
+            return (
+                <h2 className={`black-background ${css.mainHeader}`}>
+                    Hugo Herman-Wilson
+                </h2>
+            );
+        }
+    }
+
     render() {
+
         return (
             <div
                 id="Menu"
@@ -27,9 +44,7 @@ export default class Menu extends React.Component {
                     css[this.props.visiblity]
                 }`}
             >
-                <h1 className={`black-background ${css.mainHeader}`}>
-                    Hugo Herman-Wilson
-                </h1>
+                {this.getCorrectHeaderTag()}
                 <h2
                     className={`black-background ${css.oneLine} ${css.subHeader}`}
                 >
