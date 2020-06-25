@@ -1,14 +1,13 @@
 import React from 'react';
 import get from 'lodash/get';
 import { graphql } from 'gatsby';
-import Template from '../layouts/index';
+import Template from '../layouts/Template';
 import Menu from '../components/Menu';
 import Body from '../components/Body';
 
 
 class Events extends React.Component {
     render() {
-        const siteTitle = get(this, 'props.data.site.siteMetadata.title');
         const events = get(this, 'props.data.allMarkdownRemark.edges');
 
         return (

@@ -1,5 +1,5 @@
 import React from 'react';
-import css from './mobileMenu.module.css';
+import css from './MobileMenu.module.css';
 import 'fomantic-ui-css/components/icon.min.css';
 import { Icon } from 'semantic-ui-react';
 

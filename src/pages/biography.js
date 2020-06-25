@@ -1,6 +1,6 @@
 import React from 'react';
-import Template from '../layouts/index';
-import Menu from '../components/menu.js';
+import Template from '../layouts/Template';
+import Menu from '../components/Menu.js';
 import Body from '../components/Body.js';
 
 export default function Biography(props) {

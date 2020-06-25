@@ -1,7 +1,7 @@
 import React from 'react';
-import SplashLayout from '../layouts/splash';
-import SplashImage from '../components/splash/splashImage.js';
-import Menu from '../components/menu.js';
+import SplashLayout from '../layouts/SplashLayout';
+import SplashImage from '../components/splash/SplashImage.js';
+import Menu from '../components/Menu.js';
 
 class SplashPage extends React.Component {
 
