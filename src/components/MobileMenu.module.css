@@ -33,9 +33,12 @@
     margin-top: 2em;
 }
 
+.item:link{
+    color: white;
+}
+
 .item:visited{
     color: white;
-    text-decoration: none;
 }
 
 .item:active{
