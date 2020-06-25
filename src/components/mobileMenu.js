@@ -16,11 +16,11 @@ export default function MobileMenu(props) {
                 css[menuStateClass(props)]
             }`}
         >
-            <a className={css.item}>Biography</a>
-            <a className={css.item}>Listen</a>
-            <a className={css.item}>Gallery</a>
-            <a className={css.item}>Events</a>
-            <a className={css.item}>Contact</a>
+            <a className={css.item} href="/biography">Biography</a>
+            <a className={css.item}href="/listen">Listen</a>
+            <a className={css.item}href="/gallery">Gallery</a>
+            <a className={css.item}href="/events">Events</a>
+            <a className={css.item}href="/contact">Contact</a>
             <Icon
                 className={`${css.item} ${css.icon} pink`}
                 name="close"

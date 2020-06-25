@@ -1,39 +1,46 @@
 import React from 'react';
 import get from 'lodash/get';
-import Helmet from 'react-helmet';
 import { graphql } from 'gatsby';
+import Template from '../layouts/index';
+import Menu from '../components/Menu';
+import Body from '../components/Body';
 
-import Bio from '../components/Bio';
 
-class EventsPage extends React.Component {
+class Events extends React.Component {
     render() {
         const siteTitle = get(this, 'props.data.site.siteMetadata.title');
         const events = get(this, 'props.data.allMarkdownRemark.edges');
 
         return (
             <div>
-                <Helmet title={siteTitle} />
-                <Bio />
-                {events.map(({ node }) => {
-                    const title = get(node, 'frontmatter.name');
-                    const venue = get(node, 'frontmatter.venue');
-                    return (
-                        <div key={node.fields.slug}>
-                            <h3>{title}</h3>
-                            <small>{node.frontmatter.date}</small>
-                            <p>Venue: {venue}</p>
-                            <p
-                                dangerouslySetInnerHTML={{ __html: node.html }}
-                            />
-                        </div>
-                    );
-                })}
+                <Template>
+                    <Menu />
+                    <Body className="white center-text">
+                        <h1 className="title-font large-text">Events</h1>
+                        {events.map(({ node }) => {
+                            const title = get(node, 'frontmatter.name');
+                            const venue = get(node, 'frontmatter.venue');
+                            return (
+                                <div key={node.fields.slug}>
+                                    <h3>{title}</h3>
+                                    <small>{node.frontmatter.date}</small>
+                                    <p>Venue: {venue}</p>
+                                    <p
+                                        dangerouslySetInnerHTML={{
+                                            __html: node.html
+                                        }}
+                                    />
+                                </div>
+                            );
+                        })}
+                    </Body>
+                </Template>
             </div>
         );
     }
 }
 
-export default EventsPage;
+export default Events;
 
 export const pageQuery = graphql`
     query IndexQuery {

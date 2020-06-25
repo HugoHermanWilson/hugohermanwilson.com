@@ -8,3 +8,7 @@
     border-top: #e03997 solid 3px;
     border-bottom: #e03997 solid 3px;
 }
+
+.container h1 {
+    margin: 0 0 1em 0;
+}
