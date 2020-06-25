@@ -26,6 +26,7 @@
 .item {
     margin: 10px;
     text-decoration: none;
+    z-index: 100;
 }
 
 .item:first-child{
