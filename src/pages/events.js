@@ -5,7 +5,6 @@ import Template from '../layouts/Template';
 import Menu from '../components/Menu';
 import Body from '../components/Body';
 
-
 class Events extends React.Component {
     render() {
         const events = get(this, 'props.data.allMarkdownRemark.edges');
@@ -41,8 +40,8 @@ class Events extends React.Component {
 
 export default Events;
 
-export const pageQuery = graphql`
-    query IndexQuery {
+export const eventsQuery = graphql`
+    query eventsQuery {
         site {
             siteMetadata {
                 title
