@@ -1,7 +1,7 @@
 import React from 'react';
+import { Icon } from 'semantic-ui-react';
 import css from './MobileMenu.module.css';
 import 'fomantic-ui-css/components/icon.min.css';
-import { Icon } from 'semantic-ui-react';
 
 export default function MobileMenu(props) {
     const menuStateClass = props => {
