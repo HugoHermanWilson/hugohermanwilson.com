@@ -5,37 +5,35 @@ import Template from '../layouts/Template';
 import Menu from '../components/Menu';
 import Body from '../components/Body';
 
-class Events extends React.Component {
-    render() {
-        const events = get(this, 'props.data.allMarkdownRemark.edges');
+function Events(props) {
+    const events = get(props, 'data.allMarkdownRemark.edges');
 
-        return (
-            <div>
-                <Template>
-                    <Menu />
-                    <Body className="white center-text">
-                        <h1 className="title-font large-text">Events</h1>
-                        {events.map(({ node }) => {
-                            const title = get(node, 'frontmatter.name');
-                            const venue = get(node, 'frontmatter.venue');
-                            return (
-                                <div key={node.fields.slug}>
-                                    <h3>{title}</h3>
-                                    <small>{node.frontmatter.date}</small>
-                                    <p>Venue: {venue}</p>
-                                    <p
-                                        dangerouslySetInnerHTML={{
-                                            __html: node.html
-                                        }}
-                                    />
-                                </div>
-                            );
-                        })}
-                    </Body>
-                </Template>
-            </div>
-        );
-    }
+    return (
+        <div>
+            <Template>
+                <Menu />
+                <Body className="white center-text">
+                    <h1 className="title-font large-text">Events</h1>
+                    {events.map(({ node }) => {
+                        const title = get(node, 'frontmatter.name');
+                        const venue = get(node, 'frontmatter.venue');
+                        return (
+                            <div key={node.fields.slug}>
+                                <h3>{title}</h3>
+                                <small>{node.frontmatter.date}</small>
+                                <p>Venue: {venue}</p>
+                                <p
+                                    dangerouslySetInnerHTML={{
+                                        __html: node.html
+                                    }}
+                                />
+                            </div>
+                        );
+                    })}
+                </Body>
+            </Template>
+        </div>
+    );
 }
 
 export default Events;
