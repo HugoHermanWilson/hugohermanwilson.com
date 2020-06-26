@@ -3,7 +3,7 @@ import Template from '../layouts/Template';
 import Menu from '../components/Menu';
 import Body from '../components/Body';
 
-export default function Contact(props) {
+export default function Contact() {
     return (
         <div>
             <Template>

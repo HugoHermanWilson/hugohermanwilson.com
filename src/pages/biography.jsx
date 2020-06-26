@@ -3,7 +3,7 @@ import Template from '../layouts/Template';
 import Menu from '../components/Menu';
 import Body from '../components/Body';
 
-export default function Biography(props) {
+export default function Biography() {
     return (
         <div>
             <Template>

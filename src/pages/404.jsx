@@ -3,7 +3,7 @@ import Template from '../layouts/Template';
 import Menu from '../components/Menu';
 import Body from '../components/Body';
 
-export default function Missing404(props) {
+export default function Missing404() {
     return (
         <div>
             <style>{'body{ background: black;}'}</style>

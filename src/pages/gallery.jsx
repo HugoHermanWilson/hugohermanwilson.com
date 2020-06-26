@@ -3,7 +3,7 @@ import Template from '../layouts/Template';
 import Menu from '../components/Menu';
 import Body from '../components/Body';
 
-export default function Gallery(props) {
+export default function Gallery() {
     return (
         <div>
             <Template>
