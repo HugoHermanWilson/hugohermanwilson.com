@@ -3,7 +3,7 @@ import Head from '../components/Head';
 
 
 class Template extends React.Component {
-  
+
   render() {
 
     return (

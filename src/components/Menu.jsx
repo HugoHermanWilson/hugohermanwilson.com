@@ -5,7 +5,7 @@ import { Icon } from 'semantic-ui-react';
 import MobileMenu from './MobileMenu';
 
 export default class Menu extends React.Component {
-    
+
     constructor(props){
         super(props);
         this.state = {
