@@ -4,29 +4,28 @@ import SplashImage from '../components/splash/SplashImage';
 import Menu from '../components/Menu';
 
 class SplashPage extends React.Component {
-
-    constructor(props){
+    constructor(props) {
         super(props);
         this.state = {
             visibility: 'hidden'
-        }
+        };
     }
 
-    componentDidMount(){
-        setTimeout(
-            () => {
-                this.setState({ visibility: 'visible' })
-            },
-            20
-        )
+    componentDidMount() {
+        setTimeout(() => {
+            this.setState({ visibility: 'visible' });
+        }, 20);
     }
 
-    render(){
+    render() {
         return (
             <div>
                 <SplashLayout>
                     <SplashImage visiblity={this.state.visibility} />
-                    <Menu path={this.props.location.pathname} visiblity={this.state.visibility} />
+                    <Menu
+                        path={this.props.location.pathname}
+                        visiblity={this.state.visibility}
+                    />
                 </SplashLayout>
             </div>
         );

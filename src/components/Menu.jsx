@@ -5,38 +5,35 @@ import { Icon } from 'semantic-ui-react';
 import MobileMenu from './MobileMenu';
 
 export default class Menu extends React.Component {
-
-    constructor(props){
+    constructor(props) {
         super(props);
         this.state = {
             menuOpen: false
-        }
+        };
     }
 
     toggleMenuOpen = () => {
         this.setState({
             menuOpen: !this.state.menuOpen
-        })
-    }
+        });
+    };
 
     getCorrectHeaderTag = () => {
-        if (this.props.path === '/'){
+        if (this.props.path === '/') {
             return (
                 <h1 className={`black-background ${css.mainHeader}`}>
                     Hugo Herman-Wilson
                 </h1>
             );
-        } else {
-            return (
-                <h2 className={`black-background ${css.mainHeader}`}>
-                    Hugo Herman-Wilson
-                </h2>
-            );
         }
-    }
+        return (
+            <h2 className={`black-background ${css.mainHeader}`}>
+                Hugo Herman-Wilson
+            </h2>
+        );
+    };
 
     render() {
-
         return (
             <div
                 id="Menu"
