@@ -30,3 +30,8 @@ body {
     border-radius: 10px;
     padding: 0 10px;
 }
+
+iframe {
+    width: -webkit-fill-available;
+    height: -webkit-fill-available;
+}

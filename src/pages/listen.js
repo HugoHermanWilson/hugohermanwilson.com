@@ -31,12 +31,12 @@ export default function Listen(props) {
 
                             return (
                                 <div key={slug}>
-                                    <div 
+                                    <p>{description}</p>
+                                    <div
                                         dangerouslySetInnerHTML={{
                                             __html: html
                                         }}
                                     />
-                                    <p>{description}</p>
                                 </div>
                             );
                         })}

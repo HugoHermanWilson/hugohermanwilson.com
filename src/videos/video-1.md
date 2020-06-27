@@ -1,5 +1,5 @@
 ---
-description: Hugo's video 1
+description: Hugo's video
 ---
 
-<iframe width="100%" height="auto" src="https://www.youtube.com/embed/ZLyDvABxGF0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/ZLyDvABxGF0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
