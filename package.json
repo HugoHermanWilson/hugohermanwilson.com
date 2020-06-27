@@ -1,8 +1,8 @@
 {
-    "name": "gatsby-starter-blog-no-styles",
-    "description": "Starter Gatsby Blog No Styles",
+    "name": "hugo-herman-wilson-dot-com",
+    "description": "Hugo Herman-Wilson's professional website",
     "version": "1.0.0",
-    "author": "Noah Glusenkamp <noah.glusenkamp@gmail.com>",
+    "author": "Sarah French",
     "bugs": {
         "url": "https://github.com/gatsbyjs/gatsby-starter-blog/issues"
     },
@@ -28,6 +28,7 @@
         "gatsby-transformer-sharp": "^2.0.0",
         "lodash": "^4.15.0",
         "prismjs": "^1.20.0",
+        "prop-types": "^15.7.2",
         "react": "^16.13.1",
         "react-dom": "^16.13.1",
         "react-helmet": "^5.2.1",

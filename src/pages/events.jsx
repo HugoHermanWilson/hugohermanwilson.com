@@ -39,29 +39,29 @@ function Events(props) {
 export default Events;
 
 export const eventsQuery = graphql`
-           query eventsQuery {
-               site {
-                   siteMetadata {
-                       title
-                   }
-               }
-               allMarkdownRemark(
-                   sort: { fields: [frontmatter___date], order: DESC }
-                   filter: { fileAbsolutePath: { regex: "/pages/" } }
-               ) {
-                   edges {
-                       node {
-                           fields {
-                               slug
-                           }
-                           html
-                           frontmatter {
-                               name
-                               date(formatString: "DD MMMM, YYYY")
-                               venue
-                           }
-                       }
-                   }
-               }
-           }
-       `;
+    query eventsQuery {
+        site {
+            siteMetadata {
+                title
+            }
+        }
+        allMarkdownRemark(
+            sort: { fields: [frontmatter___date], order: DESC }
+            filter: { fileAbsolutePath: { regex: "/pages/" } }
+        ) {
+            edges {
+                node {
+                    fields {
+                        slug
+                    }
+                    html
+                    frontmatter {
+                        name
+                        date(formatString: "DD MMMM, YYYY")
+                        venue
+                    }
+                }
+            }
+        }
+    }
+`;

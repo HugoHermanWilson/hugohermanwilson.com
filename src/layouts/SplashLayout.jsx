@@ -1,17 +1,24 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Head from '../components/Head';
 
-class SplashLayout extends React.Component {
-    render() {
-        const { children } = this.props;
+function SplashLayout(props) {
+    const { children } = props;
 
-        return (
-            <div id="SplashPage" className="splash">
-                <Head />
-                {children}
-            </div>
-        );
-    }
+    return (
+        <div id="SplashPage" className="splash">
+            <Head />
+            {children}
+        </div>
+    );
 }
 
 export default SplashLayout;
+
+SplashLayout.propTypes = {
+    children: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.object]))
+};
+
+SplashLayout.defaultProps = {
+    children: { message: 'child JSX not found' }
+};
