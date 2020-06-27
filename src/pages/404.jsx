@@ -13,9 +13,17 @@ export default function Missing404() {
                     <h1 className="title-font large-text">404</h1>
                     <p>
                         Sorry, that page doesn&apos;t exist! Use the menu above
+                        or{' '}
                         <span
+                            role="button"
+                            tabIndex="0"
                             className="pink"
                             onClick={() => {
+                                // eslint-disable-next-line no-undef
+                                window.history.back();
+                            }}
+                            onKeyPress={() => {
+                                // eslint-disable-next-line no-undef
                                 window.history.back();
                             }}
                         >
