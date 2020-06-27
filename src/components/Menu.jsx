@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Icon } from 'semantic-ui-react';
 import css from './Menu.module.css';
 import 'fomantic-ui-css/components/icon.min.css';
@@ -13,9 +14,7 @@ export default class Menu extends React.Component {
     }
 
     toggleMenuOpen = () => {
-        this.setState({
-            menuOpen: !this.state.menuOpen
-        });
+        this.setState(prevState => ({ menuOpen: !prevState.menuOpen }));
     };
 
     getCorrectHeaderTag = () => {
@@ -64,3 +63,8 @@ export default class Menu extends React.Component {
         );
     }
 }
+
+Menu.propTypes = {
+    visiblity: PropTypes.string.isRequired,
+    path: PropTypes.string.isRequired
+};
