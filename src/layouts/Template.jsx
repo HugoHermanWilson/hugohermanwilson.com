@@ -15,8 +15,5 @@ export default Template;
 
 Template.propTypes = {
     children: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.object]))
-};
-
-Template.defaultProps = {
-    children: { message: 'child JSX not found' }
+        .isRequired
 };

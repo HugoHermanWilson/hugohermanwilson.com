@@ -1,3 +1,4 @@
+/* eslint-disable react/no-danger */
 import React from 'react';
 import get from 'lodash/get';
 import { graphql } from 'gatsby';

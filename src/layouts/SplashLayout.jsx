@@ -17,8 +17,5 @@ export default SplashLayout;
 
 SplashLayout.propTypes = {
     children: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.object]))
-};
-
-SplashLayout.defaultProps = {
-    children: { message: 'child JSX not found' }
+        .isRequired
 };

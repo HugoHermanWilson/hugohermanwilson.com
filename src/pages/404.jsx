@@ -12,7 +12,7 @@ export default function Missing404() {
                 <Body className="white center-text">
                     <h1 className="title-font large-text">404</h1>
                     <p>
-                        Sorry, that page doesn't exist! Use the menu above or{' '}
+                        Sorry, that page doesn&apos;t exist! Use the menu above
                         <span
                             className="pink"
                             onClick={() => {

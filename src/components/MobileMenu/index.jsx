@@ -1,10 +1,11 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Icon } from 'semantic-ui-react';
 import css from './index.module.css';
 import 'fomantic-ui-css/components/icon.min.css';
 
 export default function MobileMenu(props) {
-    const menuStateClass = props => {
+    const menuStateClass = () => {
         return props.visible ? 'visible' : 'hidden';
     };
 
@@ -34,7 +35,13 @@ export default function MobileMenu(props) {
                 className={`${css.item} ${css.icon} pink`}
                 name="close"
                 onClick={props.toggleMenu}
+                role="button"
             />
         </nav>
     );
 }
+
+MobileMenu.propTypes = {
+    visible: PropTypes.string.isRequired,
+    toggleMenu: PropTypes.func.isRequired
+};
