@@ -1,7 +1,7 @@
 .container {
-    margin: 200px 1em 1em 1em;
+    margin: 200px 1rem 1rem 1rem;
     background-color: #2A2A2A;
-    padding: 2em 1em;
+    padding: 2rem 1rem;
 }
 
 .pinkAccent {
@@ -10,5 +10,5 @@
 }
 
 .container h1 {
-    margin: 0 0 1em 0;
+    margin: 0 0 1rem 0;
 }
