@@ -13,7 +13,7 @@ export default function Listen(props) {
         <div>
             <Template>
                 <Menu />
-                <Body className="white center-text">
+                <Body className="white center-text body-font">
                     <h1 className="title-font large-text">Listen</h1>
                     <div id="Videos">
                         {videos.map(({ node }) => {

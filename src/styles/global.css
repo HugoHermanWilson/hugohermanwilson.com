@@ -1,4 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Staatliches);
+@import url(https://fonts.googleapis.com/css?family=Roboto);
 
 body {
     background: black;
@@ -7,6 +8,10 @@ body {
 
 .title-font {
     font-family: 'Staatliches', sans-serif;
+}
+
+.body-font {
+    font-family: 'Roboto', sans-serif;
 }
 
 .pink {

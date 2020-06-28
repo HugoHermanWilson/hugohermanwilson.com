@@ -8,7 +8,7 @@ export default function Contact() {
         <div>
             <Template>
                 <Menu />
-                <Body className="white center-text">
+                <Body className="white center-text body-font">
                     <h1 className="title-font large-text">Contact</h1>
                     <p>Email the big dog baritone</p>
                 </Body>

@@ -8,7 +8,7 @@ export default function Biography() {
         <div>
             <Template>
                 <Menu />
-                <Body className="white center-text">
+                <Body className="white center-text body-font">
                     <h1 className="title-font large-text">Biography</h1>
                     <p>He&apos;s a big dog baritone</p>
                 </Body>
