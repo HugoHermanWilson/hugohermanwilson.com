@@ -13,6 +13,12 @@
     text-align: center;
 }
 
+.mainHeader a {
+    font: inherit;
+    color: inherit;
+    text-decoration: inherit;
+}
+
 .subHeader {
     font-size: 10vw;
     margin: 10px 0 10px 0;
@@ -40,3 +46,4 @@
 .visible {
     opacity:1;
 }
+

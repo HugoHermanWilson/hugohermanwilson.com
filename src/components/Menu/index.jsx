@@ -21,13 +21,13 @@ export default class Menu extends React.Component {
         if (this.props.path === '/') {
             return (
                 <h1 className={`black-background ${css.mainHeader}`}>
-                    Hugo Herman-Wilson
+                    <a href="/">Hugo Herman-Wilson</a>
                 </h1>
             );
         }
         return (
             <h2 className={`black-background ${css.mainHeader}`}>
-                Hugo Herman-Wilson
+                <a href="/">Hugo Herman-Wilson</a>
             </h2>
         );
     };
