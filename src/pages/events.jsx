@@ -13,7 +13,7 @@ function Events(props) {
         <div>
             <Template>
                 <Menu />
-                <Body className="white center-text">
+                <Body className="white center-text body-font">
                     <h1 className="title-font large-text">Events</h1>
                     {events.map(({ node }) => {
                         const title = get(node, 'frontmatter.name');

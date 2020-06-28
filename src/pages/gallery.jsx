@@ -8,7 +8,7 @@ export default function Gallery() {
         <div>
             <Template>
                 <Menu />
-                <Body className="white center-text">
+                <Body className="white center-text body-font">
                     <h1 className="title-font large-text">Gallery</h1>
                     <p>Look at the big dog baritone</p>
                 </Body>
