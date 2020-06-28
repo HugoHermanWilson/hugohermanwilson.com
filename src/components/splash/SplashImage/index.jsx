@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import Img from 'gatsby-image';
-import css from './SplashImage.module.css';
+import css from './index.module.css';
 
 export default function SplashImage(props) {
     const data = useStaticQuery(
