@@ -39,6 +39,7 @@ export default class Menu extends React.Component {
                 className={`title-font ${css.container} ${
                     css[this.props.visiblity]
                 }`}
+                ref={this.props.menuRef}
             >
                 {this.getCorrectHeaderTag()}
                 <h2

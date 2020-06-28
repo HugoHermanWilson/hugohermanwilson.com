@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { graphql, useStaticQuery } from 'gatsby';
 import Img from 'gatsby-image';
 import css from './index.module.css';
@@ -7,7 +8,7 @@ export default function SplashImage(props) {
     const data = useStaticQuery(
         graphql`
             query {
-                allFile(filter: { relativePath: { eq: "splash-image.jpg" } }) {
+                allFile(filter: { relativePath: { eq: "splash-image2.jpg" } }) {
                     edges {
                         node {
                             absolutePath
@@ -25,13 +26,21 @@ export default function SplashImage(props) {
     );
 
     return (
-        <div id="SplashImage" className={css.container}>
+        <div
+            id="SplashImage"
+            className={css.container}
+            style={{ height: props.height }}
+        >
             <Img
                 className={`${css.image} ${css[props.visiblity]}`}
                 height="100vh"
-                style={{ position: 'static' }}
+                style={{ width: '100%' }}
                 fluid={data.allFile.edges[0].node.childImageSharp.fluid}
             />
         </div>
     );
 }
+
+SplashImage.propTypes = {
+    height: PropTypes.string.isRequired
+};
