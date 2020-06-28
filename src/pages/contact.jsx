@@ -11,7 +11,10 @@ export default function Contact() {
                 <Menu />
                 <Body className="white center-text body-font">
                     <h1 className="title-font large-text">Contact</h1>
-                    <p>Please send me an email using the form below.</p>
+                    <p>
+                        If you&apos;d like to get in touch, please send me an
+                        email using the form below.
+                    </p>
                     <ContactForm />
                 </Body>
             </Template>
