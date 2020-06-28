@@ -17,16 +17,13 @@ export default function Listen(props) {
                     <h1 className="title-font large-text">Listen</h1>
                     <div id="Videos">
                         {videos.map(({ node }) => {
-                            const description = get(
-                                node,
-                                'frontmatter.description'
-                            );
+                            const title = get(node, 'frontmatter.title');
                             const slug = get(node, 'fields.slug');
                             const html = get(node, 'html');
 
                             return (
                                 <div key={slug}>
-                                    <p>{description}</p>
+                                    <p>{title}</p>
                                     <div
                                         dangerouslySetInnerHTML={{
                                             __html: html
@@ -55,7 +52,7 @@ export const videosQuery = graphql`
                     }
                     html
                     frontmatter {
-                        description
+                        title
                     }
                 }
             }
