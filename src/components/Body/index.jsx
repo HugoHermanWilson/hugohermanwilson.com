@@ -1,5 +1,5 @@
 import React from 'react';
-import css from './Body.module.css';
+import css from './index.module.css';
 
 export default function Body(props) {
     return (

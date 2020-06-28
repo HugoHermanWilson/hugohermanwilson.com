@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Icon } from 'semantic-ui-react';
-import css from './Menu.module.css';
+import css from './index.module.css';
 import 'fomantic-ui-css/components/icon.min.css';
 import MobileMenu from './MobileMenu';
 
