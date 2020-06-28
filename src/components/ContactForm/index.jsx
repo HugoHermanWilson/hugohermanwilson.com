@@ -26,6 +26,7 @@ class ContactForm extends React.Component {
                 className={css.container}
                 name="contact"
                 method="POST"
+                encType="application/x-www-form-urlencoded"
                 data-netlify="true"
             >
                 <label className={css.label} htmlFor="contact-form-name">
