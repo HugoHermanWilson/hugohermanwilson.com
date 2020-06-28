@@ -29,6 +29,8 @@ class ContactForm extends React.Component {
                 encType="application/x-www-form-urlencoded"
                 data-netlify="true"
             >
+                <input type="hidden" name="form-name" value="contact" />
+
                 <label className={css.label} htmlFor="contact-form-name">
                     Your Name:{' '}
                 </label>
