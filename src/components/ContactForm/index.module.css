@@ -14,16 +14,16 @@
         transform: translate(-55px, 0px);
     }
 
-    .field {
-        margin-bottom: 0;
+    .container .field {
+        margin: 0;
     }
 
-    .label {
-        margin-bottom: 0;
+    .container .label {
+        margin: auto 0 auto auto;
         text-align: end;
     }
 
-    .button {
+    .container .button {
         grid-column-start: 2;
         grid-column-end: 3;
     }
