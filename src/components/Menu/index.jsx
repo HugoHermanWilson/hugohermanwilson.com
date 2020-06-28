@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Icon } from 'semantic-ui-react';
 import css from './index.module.css';
 import 'fomantic-ui-css/components/icon.min.css';
-import MobileMenu from './MobileMenu';
+import MobileMenu from '../MobileMenu';
 
 export default class Menu extends React.Component {
     constructor(props) {
