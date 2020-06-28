@@ -16,6 +16,12 @@ export default function MobileMenu(props) {
                 css[menuStateClass(props)]
             }`}
         >
+            <Icon
+                className={`${css.item} ${css.icon} pink`}
+                name="close"
+                onClick={props.toggleMenu}
+                role="button"
+            />
             <a className={css.item} href="/biography">
                 Biography
             </a>
@@ -31,17 +37,11 @@ export default function MobileMenu(props) {
             <a className={css.item} href="/contact">
                 Contact
             </a>
-            <Icon
-                className={`${css.item} ${css.icon} pink`}
-                name="close"
-                onClick={props.toggleMenu}
-                role="button"
-            />
         </nav>
     );
 }
 
 MobileMenu.propTypes = {
-    visible: PropTypes.string.isRequired,
+    visible: PropTypes.bool.isRequired,
     toggleMenu: PropTypes.func.isRequired
 };
