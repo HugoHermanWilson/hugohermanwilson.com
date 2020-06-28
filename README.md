@@ -3,17 +3,22 @@ Redoing hugohermanwilson.com using Netlify and GatsbyJS
 
 Made using Node v14.3.0, npm 6.14.5
 
-# Getting Started:
+## Status of last deployment
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/7c4459a4-f3aa-4e16-8c54-5d31f80abcea/deploy-status)](https://app.netlify.com/sites/reverent-morse-f22356/deploys)
+
+
+## Getting Started:
 
 1) Run `npm install`
 3) Run `gatsby develop` to launch the project on port 8000
 
 
-# Notes for Hugo
+## Notes for Hugo
 
 Data in the Biography, Events, Gallery, and Listen pages is pulled in from markdown files.
 
-## How to style text in markdown (that'll be converted to HTML)
+### How to style text in markdown (that'll be converted to HTML)
 
 [Look at this markdown cheat-sheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
 
@@ -21,7 +26,7 @@ To bold text do this : `** I'm bold**` => **I'm bold**
 
 To italicise text do this : `__I'm italic__` => __I'm italic__
 
-## Adding to the Events page
+### Adding to the Events page
 
 Markdown files found at: `src/pages/YYYY-MM-DD-event/index.md`. Should contain frontmatter and then some markdown content like this:
 
@@ -39,11 +44,11 @@ I'm _really_ looking forward to the acoustics in the venue.
 
 The `url` value should be a link off to a page describing the event. The event name will be made into a link if a URL is present.
 
-## Adding to the Gallery page
+### Adding to the Gallery page
 
 //TODO
 
-## Adding to the Listen page
+### Adding to the Listen page
 
 Markdown files found at: `src/videos/video-N.md`. Should contain frontmatter and then HTML for an embedded video:
 
