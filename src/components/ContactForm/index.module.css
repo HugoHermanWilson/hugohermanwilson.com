@@ -11,6 +11,7 @@
         display: grid;
         grid-template-columns: 100px auto;
         grid-gap: 10px;
+        transform: translate(-55px, 0px);
     }
 
     .field {
