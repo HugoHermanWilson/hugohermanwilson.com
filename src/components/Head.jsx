@@ -18,11 +18,6 @@ export default function Head() {
                 return (
                     <Helmet>
                         <html lang="en" />
-                        <script
-                            async
-                            src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GATSBY_GA_TRACKING_ID}`}
-                        />
-                        <script>{`window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', '${process.env.GATSBY_GA_TRACKING_ID}');`}</script>
                         <meta charSet="utf-8" />
                         <title>{data.site.siteMetadata.title}</title>
                         <meta
