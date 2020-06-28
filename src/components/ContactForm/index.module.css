@@ -1,0 +1,68 @@
+.container {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+@media screen and (min-width: 500px){
+    .container {
+        margin-top: 2rem;
+        width: 40vw;
+        display: grid;
+        grid-template-columns: 100px auto;
+        grid-gap: 10px;
+    }
+
+    .field {
+        margin-bottom: 0;
+    }
+
+    .label {
+        margin-bottom: 0;
+        text-align: end;
+    }
+
+    .button {
+        grid-column-start: 2;
+        grid-column-end: 3;
+    }
+}
+
+.label {
+    margin-bottom: 5px;
+    text-align: start;
+}
+
+.field {
+    min-width: 250px;
+    box-sizing: border-box;
+    min-height: 1rem;
+    padding: 5px;
+    background: #e9e9e9;
+    border: 0;
+    border-radius: 2px;
+    margin-bottom: 10px;
+}
+
+.field:focus {
+  border: #e03997 solid 2px;
+}
+
+.container input.field {
+    height: 2em;
+}
+
+
+.container textarea.field {
+    height: 150px;
+}
+
+.button {
+    background: 0;
+    border: solid #e03997 2px;
+    color: #e03997;
+    width: fit-content;
+    margin-left: auto;
+    border-radius: 10px;
+    padding: 5px 10px;
+}
