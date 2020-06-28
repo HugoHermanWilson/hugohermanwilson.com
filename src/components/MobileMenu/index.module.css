@@ -18,6 +18,13 @@
     color: white;
     background-color: rgba(0,0,0,0.8);
     backdrop-filter: blur(10px);
+
+}
+
+@supports not (backdrop-filter: blur(10px)) {
+  .container {
+    background-image: linear-gradient(rgba(0,0,0,1) 0%, rgba(0,0,0,0.8) 100%);
+  }
 }
 
 .hidden {
