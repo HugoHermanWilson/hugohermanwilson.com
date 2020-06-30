@@ -11,7 +11,7 @@ export default function Listen(props) {
     return (
         <div>
             <Template>
-                <Menu />
+                <Menu path={props.location.pathname} />
                 <Body className="white center-text body-font">
                     <h1 className="title-font large-text">Listen</h1>
                     <div id="Videos">
