@@ -4,6 +4,7 @@
 body {
     background: black;
     font-family: sans-serif;
+    margin: 0;
 }
 
 .title-font {
