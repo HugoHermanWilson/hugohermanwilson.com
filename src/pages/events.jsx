@@ -1,23 +1,23 @@
 /* eslint-disable react/no-danger */
 import React from 'react';
-import get from 'lodash/get';
+import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import Template from '../layouts/Template';
 import Menu from '../components/Menu';
 import Body from '../components/Body';
 
 function Events(props) {
-    const events = get(props, 'data.allMarkdownRemark.edges');
+    const events = props.data.allMarkdownRemark.edges;
 
     return (
         <div>
             <Template>
-                <Menu />
+                <Menu path={props.location.pathname} />
                 <Body className="white center-text body-font">
                     <h1 className="title-font large-text">Events</h1>
                     {events.map(({ node }) => {
-                        const title = get(node, 'frontmatter.name');
-                        const venue = get(node, 'frontmatter.venue');
+                        const title = node.frontmatter.name;
+                        const venue = node.frontmatter.venue;
                         return (
                             <div key={node.fields.slug}>
                                 <h3>{title}</h3>
@@ -66,3 +66,26 @@ export const eventsQuery = graphql`
         }
     }
 `;
+
+Events.propTypes = {
+    location: PropTypes.shape({
+        pathname: PropTypes.string
+    }).isRequired,
+    data: PropTypes.shape({
+        allMarkdownRemark: PropTypes.shape({
+            edges: PropTypes.arrayOf(
+                PropTypes.shape({
+                    frontmatter: PropTypes.shape({
+                        name: PropTypes.string,
+                        venue: PropTypes.string,
+                        url: PropTypes.string
+                    }),
+                    fields: PropTypes.shape({
+                        slug: PropTypes.string
+                    }),
+                    html: PropTypes.string
+                })
+            )
+        })
+    }).isRequired
+};

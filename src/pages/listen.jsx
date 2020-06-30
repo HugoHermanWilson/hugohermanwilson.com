@@ -1,25 +1,25 @@
 /* eslint-disable react/no-danger */
 import React from 'react';
+import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
-import get from 'lodash/get';
 import Template from '../layouts/Template';
 import Menu from '../components/Menu';
 import Body from '../components/Body';
 
 export default function Listen(props) {
-    const videos = get(props, 'data.allMarkdownRemark.edges');
+    const videos = props.data.allMarkdownRemark.edges;
 
     return (
         <div>
             <Template>
-                <Menu />
+                <Menu path={props.location.pathname} />
                 <Body className="white center-text body-font">
                     <h1 className="title-font large-text">Listen</h1>
                     <div id="Videos">
                         {videos.map(({ node }) => {
-                            const title = get(node, 'frontmatter.title');
-                            const slug = get(node, 'fields.slug');
-                            const html = get(node, 'html');
+                            const title = node.frontmatter.title;
+                            const slug = node.fields.slug;
+                            const html = node.html;
 
                             return (
                                 <div key={slug}>
@@ -59,3 +59,23 @@ export const videosQuery = graphql`
         }
     }
 `;
+
+Listen.propTypes = {
+    location: PropTypes.shape({
+        pathname: PropTypes.string
+    }).isRequired,
+    data: PropTypes.shape({
+        allMarkdownRemark: PropTypes.shape({
+            edges: PropTypes.arrayOf(
+                PropTypes.shape({
+                    frontmatter: PropTypes.shape({
+                        title: PropTypes.string.isRequired
+                    }),
+                    fields: PropTypes.shape({
+                        slug: PropTypes.string.isRequired
+                    })
+                })
+            )
+        })
+    }).isRequired
+};
