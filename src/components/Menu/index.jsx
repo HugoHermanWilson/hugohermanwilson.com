@@ -68,8 +68,7 @@ export default class Menu extends React.Component {
 Menu.propTypes = {
     visiblity: PropTypes.string,
     path: PropTypes.string.isRequired,
-    // eslint-disable-next-line no-undef
-    menuRef: PropTypes.shape({ current: PropTypes.instanceOf(HTMLElement) })
+    menuRef: PropTypes.shape({ current: PropTypes.instanceOf(Element) })
 };
 
 Menu.defaultProps = {
