@@ -27,7 +27,9 @@ class SplashPage extends React.Component {
             const menuHeight = this.menuRef.current.clientHeight;
             // eslint-disable-next-line no-undef
             const splashImageHeight = window.visualViewport.height - menuHeight;
-            this.setState({ imageHeight: `${splashImageHeight}px` });
+            this.setState({
+                imageHeight: `${splashImageHeight}px`
+            });
         }
     };
 
