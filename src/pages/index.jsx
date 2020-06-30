@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import SplashLayout from '../layouts/SplashLayout';
 import SplashImage from '../components/splash/SplashImage';
 import Menu from '../components/Menu';
@@ -21,8 +22,10 @@ class SplashPage extends React.Component {
     }
 
     calculateSplashImageHeight = () => {
+        // eslint-disable-next-line no-undef
         if (window) {
             const menuHeight = this.menuRef.current.clientHeight;
+            // eslint-disable-next-line no-undef
             const splashImageHeight = window.visualViewport.height - menuHeight;
             this.setState({ imageHeight: `${splashImageHeight}px` });
         }
@@ -48,3 +51,9 @@ class SplashPage extends React.Component {
 }
 
 export default SplashPage;
+
+SplashPage.propTypes = {
+    location: PropTypes.shape({
+        pathname: PropTypes.string
+    }).isRequired
+};

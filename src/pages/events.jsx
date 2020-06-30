@@ -1,5 +1,6 @@
 /* eslint-disable react/no-danger */
 import React from 'react';
+import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import Template from '../layouts/Template';
 import Menu from '../components/Menu';
@@ -65,3 +66,26 @@ export const eventsQuery = graphql`
         }
     }
 `;
+
+Events.propTypes = {
+    location: PropTypes.shape({
+        pathname: PropTypes.string
+    }).isRequired,
+    data: PropTypes.shape({
+        allMarkdownRemark: PropTypes.shape({
+            edges: PropTypes.arrayOf(
+                PropTypes.shape({
+                    frontmatter: PropTypes.shape({
+                        name: PropTypes.string,
+                        venue: PropTypes.string,
+                        url: PropTypes.string
+                    }),
+                    fields: PropTypes.shape({
+                        slug: PropTypes.string
+                    }),
+                    html: PropTypes.string
+                })
+            )
+        })
+    }).isRequired
+};

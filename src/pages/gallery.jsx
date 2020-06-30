@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Template from '../layouts/Template';
 import Menu from '../components/Menu';
 import Body from '../components/Body';
@@ -16,3 +17,9 @@ export default function Gallery(props) {
         </div>
     );
 }
+
+Gallery.propTypes = {
+    location: PropTypes.shape({
+        pathname: PropTypes.string
+    }).isRequired
+};

@@ -1,5 +1,6 @@
 /* eslint-disable react/no-danger */
 import React from 'react';
+import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import Template from '../layouts/Template';
 import Menu from '../components/Menu';
@@ -58,3 +59,23 @@ export const videosQuery = graphql`
         }
     }
 `;
+
+Listen.propTypes = {
+    location: PropTypes.shape({
+        pathname: PropTypes.string
+    }).isRequired,
+    data: PropTypes.shape({
+        allMarkdownRemark: PropTypes.shape({
+            edges: PropTypes.arrayOf(
+                PropTypes.shape({
+                    frontmatter: PropTypes.shape({
+                        title: PropTypes.string.isRequired
+                    }),
+                    fields: PropTypes.shape({
+                        slug: PropTypes.string.isRequired
+                    })
+                })
+            )
+        })
+    }).isRequired
+};
