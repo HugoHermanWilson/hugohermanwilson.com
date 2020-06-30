@@ -1,13 +1,12 @@
 /* eslint-disable react/no-danger */
 import React from 'react';
-import get from 'lodash/get';
 import { graphql } from 'gatsby';
 import Template from '../layouts/Template';
 import Menu from '../components/Menu';
 import Body from '../components/Body';
 
 function Events(props) {
-    const events = get(props, 'data.allMarkdownRemark.edges');
+    const events = props.data.allMarkdownRemark.edges;
 
     return (
         <div>
@@ -16,8 +15,8 @@ function Events(props) {
                 <Body className="white center-text body-font">
                     <h1 className="title-font large-text">Events</h1>
                     {events.map(({ node }) => {
-                        const title = get(node, 'frontmatter.name');
-                        const venue = get(node, 'frontmatter.venue');
+                        const title = node.frontmatter.name;
+                        const venue = node.frontmatter.venue;
                         return (
                             <div key={node.fields.slug}>
                                 <h3>{title}</h3>
