@@ -68,7 +68,7 @@ export default class Menu extends React.Component {
 Menu.propTypes = {
     visiblity: PropTypes.string,
     path: PropTypes.string.isRequired,
-    menuRef: PropTypes.shape({ current: PropTypes.instanceOf(Element) })
+    menuRef: PropTypes.shape({ current: null })
 };
 
 Menu.defaultProps = {
