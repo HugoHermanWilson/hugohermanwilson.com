@@ -6,7 +6,7 @@ function SplashLayout(props) {
     const { children } = props;
 
     return (
-        <div id="SplashPage" className="splash">
+        <div id="SplashPage" className="splash" style={{ width: '100vw' }}>
             <Head />
             {children}
         </div>
