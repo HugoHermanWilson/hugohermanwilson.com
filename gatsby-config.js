@@ -27,7 +27,9 @@ module.exports = {
                         options: {
                             maxWidth: 590,
                             wrapperStyle:
-                                'margin-left:10px; margin-right:0; margin-bottom:10px;'
+                                'margin-left:10px; margin-right:0; margin-bottom:10px; margin-top:10px;box-shadow:0;',
+                            backgroundColor: 'black',
+                            disableBgImage: true
                         }
                     },
                     {
