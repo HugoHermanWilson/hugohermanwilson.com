@@ -74,10 +74,7 @@ iframe {
     border-radius: 4px;
     overflow: hidden;
     float: right;
-    width: 100px;
-    margin:0;
-    margin-left: 1em;
-    margin-right: 0;
+    width: 120px;
 }
 
 @media screen and (min-width: 500px){
@@ -85,5 +82,31 @@ iframe {
         width: 50%;
         max-width: 400px;
         float: right;
+    }
+}
+
+.responsiveColumns {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+@media screen and (min-width: 500px){
+    .responsiveColumns {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+    }
+}
+
+.responsiveColumn {
+    width: 50%;
+    padding: 1em;
+}
+
+@media screen and (min-width: 500px){
+    .responsiveColumn {
+        width: 100%;
+        padding: 1em;
     }
 }
