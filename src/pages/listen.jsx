@@ -42,7 +42,7 @@ export default function Listen(props) {
 export const videosQuery = graphql`
     query VideosQuery {
         allMarkdownRemark(
-            filter: { fileAbsolutePath: { regex: "/videos/" } }
+            filter: { fileAbsolutePath: { regex: "pages/videos/" } }
             sort: { order: ASC, fields: fields___slug }
         ) {
             edges {
@@ -68,11 +68,13 @@ Listen.propTypes = {
         allMarkdownRemark: PropTypes.shape({
             edges: PropTypes.arrayOf(
                 PropTypes.shape({
-                    frontmatter: PropTypes.shape({
-                        title: PropTypes.string.isRequired
-                    }),
-                    fields: PropTypes.shape({
-                        slug: PropTypes.string.isRequired
+                    node: PropTypes.shape({
+                        frontmatter: PropTypes.shape({
+                            title: PropTypes.string.isRequired
+                        }),
+                        fields: PropTypes.shape({
+                            slug: PropTypes.string.isRequired
+                        })
                     })
                 })
             )

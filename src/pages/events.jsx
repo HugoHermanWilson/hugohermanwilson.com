@@ -48,7 +48,7 @@ export const eventsQuery = graphql`
         }
         allMarkdownRemark(
             sort: { fields: [frontmatter___date], order: DESC }
-            filter: { fileAbsolutePath: { regex: "/pages/" } }
+            filter: { fileAbsolutePath: { regex: "/pages/events/" } }
         ) {
             edges {
                 node {
@@ -75,15 +75,17 @@ Events.propTypes = {
         allMarkdownRemark: PropTypes.shape({
             edges: PropTypes.arrayOf(
                 PropTypes.shape({
-                    frontmatter: PropTypes.shape({
-                        name: PropTypes.string,
-                        venue: PropTypes.string,
-                        url: PropTypes.string
-                    }),
-                    fields: PropTypes.shape({
-                        slug: PropTypes.string
-                    }),
-                    html: PropTypes.string
+                    node: PropTypes.shape({
+                        frontmatter: PropTypes.shape({
+                            name: PropTypes.string,
+                            venue: PropTypes.string,
+                            url: PropTypes.string
+                        }),
+                        fields: PropTypes.shape({
+                            slug: PropTypes.string
+                        }),
+                        html: PropTypes.string
+                    })
                 })
             )
         })
