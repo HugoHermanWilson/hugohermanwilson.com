@@ -19,13 +19,6 @@ module.exports = {
             }
         },
         {
-            resolve: `gatsby-source-filesystem`,
-            options: {
-                path: `${__dirname}/src/videos`,
-                name: 'videos'
-            }
-        },
-        {
             resolve: `gatsby-transformer-remark`,
             options: {
                 plugins: [
