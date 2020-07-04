@@ -41,7 +41,6 @@ export default function SplashImage(props) {
     );
 }
 
-
 SplashImage.propTypes = {
     height: PropTypes.string.isRequired,
     visiblity: PropTypes.string.isRequired
