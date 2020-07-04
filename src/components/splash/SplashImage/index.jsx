@@ -8,7 +8,7 @@ export default function SplashImage(props) {
     const data = useStaticQuery(
         graphql`
             query {
-                allFile(filter: { relativePath: { eq: "splash-image2.jpg" } }) {
+                allFile(filter: { relativePath: { eq: "splash-image.jpg" } }) {
                     edges {
                         node {
                             absolutePath
