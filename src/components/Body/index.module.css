@@ -1,7 +1,42 @@
 .container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.body {
     margin: 1rem;
     background-color: #2A2A2A;
     padding: 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+}
+
+@media screen and (max-width: 325px){
+    /* very small screens, e.g. iPhone 5s */
+    .body {
+        width: 100vw;
+        margin: 0;
+    }
+}
+
+@media screen and (min-width: 500px){
+    /* Larger than mobile - tablet and desktop */
+    .body {
+        margin-top: 2rem;
+        width: 75vw;
+    }
+}
+
+@media screen and (min-width: 800px){
+    /* Larger than tablet - desktop */
+    .body {
+        margin-top: 2rem;
+        width: 50vw;
+    }
 }
 
 .pinkAccent {
