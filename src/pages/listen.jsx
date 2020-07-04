@@ -25,6 +25,13 @@ export default function Listen(props) {
                                 <div key={slug}>
                                     <p>{title}</p>
                                     <div
+                                        style={{
+                                            width: '300px',
+                                            height: '300px',
+                                            display: 'flex',
+                                            flexDirection: 'column',
+                                            alignItems: 'center'
+                                        }}
                                         dangerouslySetInnerHTML={{
                                             __html: html
                                         }}

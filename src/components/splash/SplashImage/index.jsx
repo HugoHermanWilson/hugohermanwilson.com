@@ -14,7 +14,7 @@ export default function SplashImage(props) {
                             absolutePath
                             childImageSharp {
                                 id
-                                fluid(sizes: "1500px, 2000px") {
+                                fluid(sizes: "2000px, 4000px") {
                                     ...GatsbyImageSharpFluid
                                 }
                             }
