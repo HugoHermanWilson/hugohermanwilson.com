@@ -10,38 +10,36 @@ export default function Listen(props) {
     const videos = props.data.allMarkdownRemark.edges;
 
     return (
-        <div>
-            <Template>
-                <Menu path={props.location.pathname} />
-                <Body className="white center-text body-font">
-                    <h1 className="title-font large-text">Listen</h1>
-                    <div id="Videos">
-                        {videos.map(({ node }) => {
-                            const title = node.frontmatter.title;
-                            const slug = node.fields.slug;
-                            const html = node.html;
+        <Template>
+            <Menu path={props.location.pathname} />
+            <Body className="white center-text body-font">
+                <h1 className="title-font large-text">Listen</h1>
+                <div id="Videos">
+                    {videos.map(({ node }) => {
+                        const title = node.frontmatter.title;
+                        const slug = node.fields.slug;
+                        const html = node.html;
 
-                            return (
-                                <div key={slug}>
-                                    <p>{title}</p>
-                                    <div
-                                        style={{
-                                            height: '300px',
-                                            display: 'flex',
-                                            flexDirection: 'column',
-                                            alignItems: 'center'
-                                        }}
-                                        dangerouslySetInnerHTML={{
-                                            __html: html
-                                        }}
-                                    />
-                                </div>
-                            );
-                        })}
-                    </div>
-                </Body>
-            </Template>
-        </div>
+                        return (
+                            <div key={slug}>
+                                <p>{title}</p>
+                                <div
+                                    style={{
+                                        height: '300px',
+                                        display: 'flex',
+                                        flexDirection: 'column',
+                                        alignItems: 'center'
+                                    }}
+                                    dangerouslySetInnerHTML={{
+                                        __html: html
+                                    }}
+                                />
+                            </div>
+                        );
+                    })}
+                </div>
+            </Body>
+        </Template>
     );
 }
 

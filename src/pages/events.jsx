@@ -10,30 +10,28 @@ function Events(props) {
     const events = props.data.allMarkdownRemark.edges;
 
     return (
-        <div>
-            <Template>
-                <Menu path={props.location.pathname} />
-                <Body className="white center-text body-font">
-                    <h1 className="title-font large-text">Events</h1>
-                    {events.map(({ node }) => {
-                        const title = node.frontmatter.name;
-                        const venue = node.frontmatter.venue;
-                        return (
-                            <div key={node.fields.slug}>
-                                <h3>{title}</h3>
-                                <small>{node.frontmatter.date}</small>
-                                <p>Venue: {venue}</p>
-                                <p
-                                    dangerouslySetInnerHTML={{
-                                        __html: node.html
-                                    }}
-                                />
-                            </div>
-                        );
-                    })}
-                </Body>
-            </Template>
-        </div>
+        <Template>
+            <Menu path={props.location.pathname} />
+            <Body className="white center-text body-font">
+                <h1 className="title-font large-text">Events</h1>
+                {events.map(({ node }) => {
+                    const title = node.frontmatter.name;
+                    const venue = node.frontmatter.venue;
+                    return (
+                        <div key={node.fields.slug}>
+                            <h3>{title}</h3>
+                            <small>{node.frontmatter.date}</small>
+                            <p>Venue: {venue}</p>
+                            <p
+                                dangerouslySetInnerHTML={{
+                                    __html: node.html
+                                }}
+                            />
+                        </div>
+                    );
+                })}
+            </Body>
+        </Template>
     );
 }
 

@@ -35,19 +35,17 @@ class SplashPage extends React.Component {
 
     render() {
         return (
-            <div>
-                <SplashLayout>
-                    <Menu
-                        path={this.props.location.pathname}
-                        visiblity={this.state.visibility}
-                        menuRef={this.menuRef}
-                    />
-                    <SplashImage
-                        visiblity={this.state.visibility}
-                        height={this.state.imageHeight}
-                    />
-                </SplashLayout>
-            </div>
+            <SplashLayout>
+                <Menu
+                    path={this.props.location.pathname}
+                    visiblity={this.state.visibility}
+                    menuRef={this.menuRef}
+                />
+                <SplashImage
+                    visiblity={this.state.visibility}
+                    height={this.state.imageHeight}
+                />
+            </SplashLayout>
         );
     }
 }

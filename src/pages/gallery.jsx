@@ -6,15 +6,13 @@ import Body from '../components/Body';
 
 export default function Gallery(props) {
     return (
-        <div>
-            <Template>
-                <Menu path={props.location.pathname} />
-                <Body className="white center-text body-font">
-                    <h1 className="title-font large-text">Gallery</h1>
-                    <p>Look at the big dog baritone</p>
-                </Body>
-            </Template>
-        </div>
+        <Template>
+            <Menu path={props.location.pathname} />
+            <Body className="white center-text body-font">
+                <h1 className="title-font large-text">Gallery</h1>
+                <p>Look at the big dog baritone</p>
+            </Body>
+        </Template>
     );
 }
 
