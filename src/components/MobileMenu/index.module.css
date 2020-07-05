@@ -68,7 +68,7 @@
     margin-right: 1rem;
 }
 
-@media screen and (min-width: 800px){
+@media screen and (min-width: 1000px){
     /* Larger than tablet - desktop */
     .container {
         display: none;
