@@ -35,24 +35,6 @@ body {
     text-align: left;
 }
 
-.mb-10 {
-    margin-bottom: 10%;
-}
-
-.mb-15 {
-    margin-bottom: 15%;
-}
-
-@media screen and (min-width: 500px){
-    .mb-10 {
-        margin-bottom: 30px;
-    }
-
-    .mb-15 {
-        margin-bottom: 50px;
-    }
-}
-
 .black-background {
     background: rgba(0,0,0,0.8);
     border-radius: 10px;
