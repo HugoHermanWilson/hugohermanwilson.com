@@ -55,10 +55,13 @@
     color: white;
 }
 
-.item:active{
+.item:hover{
     color: #e03997;
 }
 
+.item:active{
+    color: #e03997;
+}
 
 .icon {
     align-self: flex-end;
