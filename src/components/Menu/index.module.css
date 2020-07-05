@@ -24,8 +24,15 @@
     ); /* don't know how I got this but it works! */
 }
 
-.oneLine {
-    display: inline-block;
+.baritone {
+    color: white;
+    -webkit-text-fill-color: black; /* Will override color (regardless of order) */
+    -webkit-text-stroke-width: 0.5px;
+    -webkit-text-stroke-color: white;
+}
+
+.menuIcon {
+    display:block;
 }
 
 .alignRight {
@@ -36,6 +43,51 @@
     );
 }
 
+.oneLine {
+    display: inline-block;
+}
+
+@media screen and (min-width: 600px){
+    /* Larger than mobile - tablet and desktop */
+    .mainHeader {
+        font-size: 8vw;
+    }
+
+    .subHeader {
+        font-size: 6vw;
+        margin-left: calc((100vw - (8vw * 10)) - 10px); /* don't know how I got this but it works! */
+    }
+
+    .alignRight {
+        margin: 10px 0 10px 0;
+        margin-right: calc((100vw - (8vw * 10)) - 10px);
+    }
+}
+
+@media screen and (min-width: 1000px){
+    /* Larger than tablet - desktop */
+    .mainHeader {
+        font-size: 7vw;
+    }
+
+    .subHeader {
+        font-size: 5vw;
+        margin-left: calc((100vw - (7vw * 11)) - 10px); /* don't know how I got this but it works! */
+    }
+
+    .menuIcon {
+        display:none;
+    }
+
+    .baritone {
+        position: relative;
+        top: -1em;
+        left: 22.25em;
+        font-size: 3vw;
+        margin: 0;
+    }
+}
+
 .hidden {
     opacity:0;
 }
@@ -43,4 +95,3 @@
 .visible {
     opacity:1;
 }
-
