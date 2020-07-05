@@ -26,7 +26,6 @@ export default function Listen(props) {
                                     <p>{title}</p>
                                     <div
                                         style={{
-                                            width: '300px',
                                             height: '300px',
                                             display: 'flex',
                                             flexDirection: 'column',

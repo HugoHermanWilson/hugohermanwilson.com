@@ -1,5 +1,5 @@
 ---
-title: Hugo's video 1
+title: Papageno's Suicide Aria (Mozart's Die Zauberflöte)
 ---
 
-<iframe src="https://www.youtube.com/embed/ZLyDvABxGF0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/unGNBw-y_h0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
