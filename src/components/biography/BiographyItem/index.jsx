@@ -34,7 +34,10 @@ export default function BiographyItem(props) {
 
     const operaDetails = () => {
         return (
-            <div id={`BiographyItem-${props.index}`} className={css.container}>
+            <div
+                id={`BiographyItem-opera-${props.index}`}
+                className={css.container}
+            >
                 <h5 className={css.title}>{props.data.frontmatter.role}</h5>
                 <p className={css.opera}>{props.data.frontmatter.opera}</p>
                 <p className={css.company}>{props.data.frontmatter.company}</p>
@@ -46,7 +49,10 @@ export default function BiographyItem(props) {
         const recitalName = formattedRecitalName(props);
 
         return (
-            <div id={`BiographyItem-${props.index}`} className={css.container}>
+            <div
+                id={`BiographyItem-recital-${props.index}`}
+                className={css.container}
+            >
                 <h5
                     className={css.title}
                     dangerouslySetInnerHTML={{
