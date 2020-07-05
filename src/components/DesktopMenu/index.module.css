@@ -1,0 +1,37 @@
+.container {
+    width: 100vw;
+    display: none;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+.item {
+    display: inherit;
+    text-decoration: none;
+    font-size: 3vw;
+}
+
+.item:link{
+    color: white;
+}
+
+.item:visited{
+    color: white;
+}
+
+.item:hover{
+    color: #e03997;
+}
+
+.item:active{
+    color: #e03997;
+}
+
+@media screen and (min-width: 1000px){
+    /* Larger than tablet - desktop */
+    .container {
+        display: flex;
+    }
+}

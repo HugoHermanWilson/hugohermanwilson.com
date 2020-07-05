@@ -4,6 +4,7 @@ import { Icon } from 'semantic-ui-react';
 import css from './index.module.css';
 import 'fomantic-ui-css/components/icon.min.css';
 import MobileMenu from '../MobileMenu';
+import DesktopMenu from '../DesktopMenu';
 
 export default class Menu extends React.Component {
     constructor(props) {
@@ -43,23 +44,20 @@ export default class Menu extends React.Component {
             >
                 {this.getCorrectHeaderTag()}
                 <h2
-                    className={`black-background ${css.oneLine} ${css.subHeader}`}
+                    className={`${css.oneLine} ${css.subHeader} ${css.baritone}`}
                 >
                     Baritone
                 </h2>
                 <h2
-                    className={`${css.oneLine} ${css.subHeader} ${css.alignRight} ${css.pink}`}
+                    className={`${css.oneLine} ${css.subHeader} ${css.alignRight} ${css.menuIcon} pink`}
                 >
-                    <Icon
-                        name="bars"
-                        className="pink black-background"
-                        onClick={this.toggleMenuOpen}
-                    />
+                    <Icon name="bars" onClick={this.toggleMenuOpen} />
                 </h2>
                 <MobileMenu
                     toggleMenu={this.toggleMenuOpen}
                     visible={this.state.menuOpen}
                 />
+                <DesktopMenu />
             </div>
         );
     }
