@@ -55,12 +55,12 @@
 
     .subHeader {
         font-size: 6vw;
-        margin-left: calc((100vw - (8vw * 10)) - 10px); /* don't know how I got this but it works! */
+        margin-left: calc((100vw - (8vw * 9.9)) - 10px); /* don't know how I got this but it works! */
     }
 
     .alignRight {
         margin: 10px 0 10px 0;
-        margin-right: calc((100vw - (8vw * 10)) - 10px);
+        margin-right: calc((100vw - (8vw * 10.1)) - 10px);
     }
 }
 
