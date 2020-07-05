@@ -8,13 +8,13 @@ export default function SplashImage(props) {
     const data = useStaticQuery(
         graphql`
             query {
-                allFile(filter: { relativePath: { eq: "splash-image2.jpg" } }) {
+                allFile(filter: { relativePath: { eq: "splash-image.jpg" } }) {
                     edges {
                         node {
                             absolutePath
                             childImageSharp {
                                 id
-                                fluid(sizes: "1500px, 2000px") {
+                                fluid(sizes: "2000px, 4000px") {
                                     ...GatsbyImageSharpFluid
                                 }
                             }
@@ -40,7 +40,6 @@ export default function SplashImage(props) {
         </div>
     );
 }
-
 
 SplashImage.propTypes = {
     height: PropTypes.string.isRequired,

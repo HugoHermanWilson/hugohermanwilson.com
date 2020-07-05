@@ -19,27 +19,21 @@ module.exports = {
             }
         },
         {
-            resolve: `gatsby-source-filesystem`,
-            options: {
-                path: `${__dirname}/src/videos`,
-                name: 'videos'
-            }
-        },
-        {
             resolve: `gatsby-transformer-remark`,
             options: {
                 plugins: [
                     {
                         resolve: `gatsby-remark-images`,
                         options: {
-                            maxWidth: 590
+                            maxWidth: 590,
+                            wrapperStyle:
+                                'margin-left:10px; margin-right:0; margin-bottom:10px; margin-top:10px;box-shadow:0;',
+                            backgroundColor: 'black',
+                            disableBgImage: true
                         }
                     },
                     {
-                        resolve: `gatsby-remark-responsive-iframe`,
-                        options: {
-                            wrapperStyle: `margin-bottom: 1.0725rem`
-                        }
+                        resolve: `gatsby-remark-responsive-iframe`
                     },
                     'gatsby-remark-prismjs',
                     'gatsby-remark-copy-linked-files',

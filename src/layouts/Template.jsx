@@ -4,7 +4,7 @@ import Head from '../components/Head';
 
 function Template(props) {
     return (
-        <div>
+        <div style={{ width: '100vw' }}>
             <Head />
             {props.children}
         </div>
