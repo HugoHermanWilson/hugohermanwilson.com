@@ -68,6 +68,10 @@
     /* Larger than tablet - desktop */
     .mainHeader {
         font-size: 7vw;
+        display: inline-block;
+        width: 70%;
+        box-sizing: border-box;
+        text-align: center;
     }
 
     .subHeader {
@@ -80,12 +84,14 @@
     }
 
     .baritone {
-        position: relative;
-        top: -1em;
-        left: 22.25em;
-        font-size: 3vw;
+        font-size: 7vw;
+        display: inline-block;
+        width: 30%;
+        box-sizing: border-box;
+        text-align: start;
         margin: 0;
     }
+
 }
 
 .hidden {
