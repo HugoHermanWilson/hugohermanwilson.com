@@ -64,3 +64,14 @@
     align-self: flex-end;
     margin-right: 1rem;
 }
+
+@media screen and (min-width: 800px){
+    /* Larger than tablet - desktop */
+    .container {
+        display: none;
+    }
+
+    .icon {
+        display: none;
+    }
+}
