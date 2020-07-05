@@ -57,12 +57,12 @@ export default function Biography(props) {
                     <p className="mb-10">Recent solo highlights include:</p>
                     <div className="responsiveColumns">
                         {/* Components made from /src/pages/biography/solos/operas  */}
-                        <div className="left-text mb-15 column">
+                        <div className="left-text mb-15 responsiveColumn">
                             <h3 className="title-font center-text">Operas</h3>
                             {solosList(operaSolos)}
                         </div>
                         {/* Components made from /src/pages/biography/solos/recitals  */}
-                        <div className="left-text mb-15 column">
+                        <div className="left-text mb-15 responsiveColumn">
                             <h3 className="title-font center-text">Recitals</h3>
                             {solosList(recitalSolos)}
                         </div>
