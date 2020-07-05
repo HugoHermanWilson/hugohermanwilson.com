@@ -100,13 +100,14 @@ iframe {
 }
 
 .responsiveColumn {
-    width: 50%;
+    box-sizing: border-box;
+    width: 100%;
     padding: 1em;
 }
 
-@media screen and (min-width: 500px){
+@media screen and (min-width: 700px){
     .responsiveColumn {
-        width: 100%;
+        width: 50%;
         padding: 1em;
     }
 }
