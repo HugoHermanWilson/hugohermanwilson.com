@@ -9,7 +9,7 @@ export default function Contact(props) {
     return (
         <Template>
             <Menu path={props.location.pathname} />
-            <Body className="white center-text body-font">
+            <Body className=" center-text body-font">
                 <h1 className="title-font large-text">Contact</h1>
                 <p>
                     If you&apos;d like to get in touch, please send me an email

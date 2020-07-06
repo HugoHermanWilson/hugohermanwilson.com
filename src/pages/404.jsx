@@ -9,7 +9,7 @@ export default function Missing404() {
             <style>{'body{ background: black;}'}</style>
             <Template>
                 <Menu />
-                <Body className="white center-text body-font">
+                <Body className=" center-text body-font">
                     <h1 className="title-font large-text">404</h1>
                     <p>
                         Sorry, that page doesn&apos;t exist! Use the menu above

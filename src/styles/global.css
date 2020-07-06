@@ -1,10 +1,14 @@
 @import url(https://fonts.googleapis.com/css?family=Staatliches);
 @import url(https://fonts.googleapis.com/css?family=Roboto);
 
+html {
+    min-height: 100%;
+}
+
 body {
-    background: black;
     font-family: sans-serif;
     margin: 0;
+    background-color: black;
 }
 
 .title-font {
@@ -16,7 +20,7 @@ body {
 }
 
 .pink {
-    color: #e03997;
+    color: #fadced;
 }
 
 .white {

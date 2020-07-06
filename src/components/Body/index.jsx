@@ -4,10 +4,7 @@ import css from './index.module.css';
 
 export default function Body(props) {
     return (
-        <div
-            id="Body"
-            className={`${props.className} ${css.container} ${css.pinkAccent}`}
-        >
+        <div id="Body" className={`${props.className} ${css.container}`}>
             <div className={css.body}>{props.children}</div>
         </div>
     );

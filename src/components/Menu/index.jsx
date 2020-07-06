@@ -21,13 +21,13 @@ export default class Menu extends React.Component {
     getCorrectHeaderTag = () => {
         if (this.props.path === '/') {
             return (
-                <h1 className={`black-background ${css.mainHeader}`}>
+                <h1 className={`${css.mainHeader}`}>
                     <a href="/">Hugo Herman-Wilson</a>
                 </h1>
             );
         }
         return (
-            <h2 className={`black-background ${css.mainHeader}`}>
+            <h2 className={`${css.mainHeader}`}>
                 <a href="/">Hugo Herman-Wilson</a>
             </h2>
         );
