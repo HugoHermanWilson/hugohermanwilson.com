@@ -56,16 +56,17 @@
 }
 
 .item:hover{
-    color: #e03997;
+    color: #fadced;
 }
 
 .item:active{
-    color: #e03997;
+    color: #fadced;
 }
 
 .icon {
     align-self: flex-end;
     margin-right: 1rem;
+    color: #fadced;
 }
 
 @media screen and (min-width: 1000px){

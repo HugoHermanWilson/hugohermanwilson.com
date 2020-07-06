@@ -40,7 +40,7 @@ export default function Biography(props) {
     return (
         <Template>
             <Menu path={props.location.pathname} />
-            <Body className="white center-text body-font">
+            <Body className=" center-text body-font">
                 <h1 className="title-font large-text">Biography</h1>
 
                 {/* HTML from /src/pages/biography/biography.md  */}

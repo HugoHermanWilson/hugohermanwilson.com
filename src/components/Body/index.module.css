@@ -9,7 +9,6 @@
 
 .body {
     margin: 1rem;
-    background-color: #2A2A2A;
     padding: 2rem 1rem;
     width: 100%;
     box-sizing: border-box;
@@ -41,11 +40,6 @@
         margin-top: 2rem;
         width: 50vw;
     }
-}
-
-.pinkAccent {
-    border-top: #e03997 solid 3px;
-    border-bottom: #e03997 solid 3px;
 }
 
 .container h1 {

@@ -8,7 +8,7 @@ export default function Gallery(props) {
     return (
         <Template>
             <Menu path={props.location.pathname} />
-            <Body className="white center-text body-font">
+            <Body className=" center-text body-font">
                 <h1 className="title-font large-text">Gallery</h1>
                 <p>Look at the big dog baritone</p>
             </Body>
