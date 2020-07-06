@@ -39,7 +39,7 @@
     box-sizing: border-box;
     min-height: 1rem;
     padding: 5px;
-    background: #fadced;
+    background: #f7c6df;
     border: 0;
     border-radius: 3px;
     margin: 0 0 10px 0;
@@ -47,7 +47,7 @@
 }
 
 .field:focus {
-  border: #fadced solid 2px;
+  border: #f7c6df solid 2px;
 }
 
 .container input.field {

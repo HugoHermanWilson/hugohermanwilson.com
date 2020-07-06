@@ -22,11 +22,11 @@
 }
 
 .item:hover{
-    color: #fadced;
+    color: #f7c6df;
 }
 
 .item:active{
-    color: #fadced;
+    color: #f7c6df;
 }
 
 @media screen and (min-width: 1000px){

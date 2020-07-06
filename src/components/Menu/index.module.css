@@ -3,7 +3,7 @@
     color: white;
     transition: opacity 0.5s linear;
     background: black;
-    border-bottom: #fadced solid 20px;
+    border-bottom: #f7c6df solid 20px;
 }
 
 .mainHeader {
@@ -30,7 +30,7 @@
     color: white;
     -webkit-text-fill-color: black; /* Will override color (regardless of order) */
     -webkit-text-stroke-width: 0.5px;
-    -webkit-text-stroke-color: #fadced;
+    -webkit-text-stroke-color: #f7c6df;
 }
 
 .menuIcon {
