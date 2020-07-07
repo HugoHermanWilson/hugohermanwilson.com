@@ -17,7 +17,7 @@ export default function MobileMenu(props) {
             }`}
         >
             <Icon
-                className={`${css.item} ${css.icon} pink`}
+                className={`${css.item} ${css.icon}`}
                 name="close"
                 onClick={props.toggleMenu}
                 role="button"
