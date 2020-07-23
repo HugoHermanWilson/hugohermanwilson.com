@@ -41,6 +41,10 @@ body {
     padding: 0 10px;
 }
 
+.gallery {
+    margin-bottom: 500px;
+}
+
 iframe {
     width: inherit;
     height: inherit;

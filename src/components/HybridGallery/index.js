@@ -50,12 +50,7 @@ function ExampleDynamicLoading({ photos }) {
 
     return (
         <div>
-            <Gallery photos={images} onClick={openLightbox} />
-            {!loadedAll && (
-                <div className="loading-msg" id="msg-loading-more">
-                    Loading
-                </div>
-            )}
+            <Gallery photos={images} direction="row" onClick={openLightbox} />
             <ModalGateway>
                 {viewerIsOpen ? (
                     <Modal onClose={closeLightbox}>
