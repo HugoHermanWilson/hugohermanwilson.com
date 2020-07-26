@@ -2,7 +2,91 @@
 /* eslint-disable react/no-danger */
 import React from 'react';
 import PropTypes from 'prop-types';
-import css from './index.module.css';
+import styled from 'styled-components';
+
+const Container = styled.div`
+    margin: 0;
+    margin-bottom: 0.5rem;
+`;
+
+const Title = styled.h5`
+    margin: 0;
+    display: inline-block;
+    font-size: 1rem;
+`;
+
+const Opera = styled.h5`
+    margin: 0;
+    display: inline-block;
+    margin-left: 0.5rem;
+    font-style: italic;
+
+    :before {
+        content: '- ';
+    }
+`;
+
+const Company = styled.h5`
+    margin: 0;
+    color: #ffffff80;
+`;
+
+const formattedRecitalName = unformattedRecitalName => {
+    // addresses situations where a BiographyItem's name includes the piece of music!
+    // omg the effort for this little edge case
+    let recital = unformattedRecitalName;
+
+    if (/((?=\w)_|_\b)/.test(recital)) {
+        let tagChoice = true; // start with opening tag
+        const tags = tagChoice ? '<em>' : '</em>';
+
+        while (/((?=\w)_|_\b)/.test(recital)) {
+            recital = recital.replace(/((?=\w)_|_\b)/, tags(tagChoice));
+            tagChoice = !tagChoice;
+        }
+    }
+
+    return recital;
+};
+
+const RecitalDetails = ({ index, frontmatter }) => (
+    <Container id={`BiographyItem-recital-${index}`}>
+        <Title>{formattedRecitalName(frontmatter.recital)}></Title>
+        <Company>{frontmatter.company}</Company>
+    </Container>
+);
+
+RecitalDetails.propTypes = {
+    index: PropTypes.number.isRequired,
+    frontmatter: PropTypes.shape({
+        isOpera: PropTypes.bool,
+        role: PropTypes.string.isRequired,
+        opera: PropTypes.string.isRequired,
+        isRecital: PropTypes.bool,
+        recital: PropTypes.string.isRequired,
+        company: PropTypes.string.isRequired
+    }).isRequired
+};
+
+const OperaDetails = ({ index, frontmatter }) => (
+    <Container id={`BiographyItem-opera-${index}`}>
+        <Title>{frontmatter.role}</Title>
+        <Opera>{frontmatter.opera}</Opera>
+        <Company>{frontmatter.company}</Company>
+    </Container>
+);
+
+OperaDetails.propTypes = {
+    index: PropTypes.number.isRequired,
+    frontmatter: PropTypes.shape({
+        isOpera: PropTypes.bool,
+        role: PropTypes.string.isRequired,
+        opera: PropTypes.string.isRequired,
+        isRecital: PropTypes.bool,
+        recital: PropTypes.string.isRequired,
+        company: PropTypes.string.isRequired
+    }).isRequired
+};
 
 export default function BiographyItem(props) {
     const isOpera = () => {
@@ -13,63 +97,22 @@ export default function BiographyItem(props) {
         return !!props.data.frontmatter.isRecital;
     };
 
-    const formattedRecitalName = () => {
-        // addresses situations where a BiographyItem's name includes the piece of music!
-        // omg the effort for this little edge case
-        let recital = props.data.frontmatter.recital;
-
-        if (/((?=\w)_|_\b)/.test(props.data.frontmatter.recital)) {
-            const tags = choice => {
-                return choice ? '<em>' : '</em>';
-            };
-            let tagChoice = true; // start with opening tag
-            while (/((?=\w)_|_\b)/.test(recital)) {
-                recital = recital.replace(/((?=\w)_|_\b)/, tags(tagChoice));
-                tagChoice = !tagChoice;
-            }
-        }
-
-        return recital;
-    };
-
-    const operaDetails = () => {
-        return (
-            <div
-                id={`BiographyItem-opera-${props.index}`}
-                className={css.container}
-            >
-                <h5 className={css.title}>{props.data.frontmatter.role}</h5>
-                <p className={css.opera}>{props.data.frontmatter.opera}</p>
-                <p className={css.company}>{props.data.frontmatter.company}</p>
-            </div>
-        );
-    };
-
-    const recitalDetails = () => {
-        const recitalName = formattedRecitalName(props);
-
-        return (
-            <div
-                id={`BiographyItem-recital-${props.index}`}
-                className={css.container}
-            >
-                <h5
-                    className={css.title}
-                    dangerouslySetInnerHTML={{
-                        __html: recitalName
-                    }}
-                />
-                <p className={css.company}>{props.data.frontmatter.company}</p>
-            </div>
-        );
-    };
-
     if (isOpera(props)) {
-        return operaDetails(props);
+        return (
+            <OperaDetails
+                index={props.index}
+                frontmatter={props.data.frontmatter}
+            />
+        );
     }
 
     if (isRecital(props)) {
-        return recitalDetails(props);
+        return (
+            <OperaDetails
+                index={props.index}
+                frontmatter={props.data.frontmatter}
+            />
+        );
     }
 
     return <div id="bad-file" />;
