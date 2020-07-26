@@ -24,3 +24,35 @@ collections:
     fields:
       - { name: title, label: Title }
       - { name: body, label: YouTube Embed HTML, widget: markdown }
+  - name: biography
+    label: Biography
+    folder: src/pages/biography
+    create: false #only edit existing biogaphy .md file
+    slug: "biography"
+    fields:
+      - { name: title, label: Title }
+      - { name: body, label: Biography, widget: markdown }
+  - name: solo-opera
+    label: 'Opera role'
+    folder: src/pages/biography/solos/operas
+    create: true
+    slug: "{{approxDate}}-{{opera}}"
+    identifier_field: opera
+    sortableFields: [opera, approxDate]
+    fields:
+      - { name: isOpera, label: Display on website, comment: This needs to be 'on', widget: boolean, default: true }
+      - { name: role, label: Role, widget: string }
+      - { name: opera, label: Opera, widget: string }
+      - { name: company, label: Company, widget: string }
+      - { name: approxDate, label: Date (YYYY-MM-DD), comment: "approxDate: use YYYY-MM-DD format. This data's used in the CMS only", widget: string }
+  - name: solo-recital
+    label: 'Recital'
+    folder: src/pages/biography/solos/recitals
+    create: true
+    slug: "{{approxDate}}-recital"
+    identifier_field: recital
+    sortableFields: [recital, approxDate]
+    fields:
+      - { name: isRecital, label: Display on website, widget: boolean, default: true }
+      - { name: recital, label: Recital details (italicise with _underscores_), widget: string, comment: "recital: Use underscores to italicise titles, e.g Vaughan Williams' _Serenade to Music_" }
+      - { name: approxDate, label: Date (YYYY-MM-DD), comment: "approxDate: use YYYY-MM-DD format. This data's used in the CMS only", widget: string }

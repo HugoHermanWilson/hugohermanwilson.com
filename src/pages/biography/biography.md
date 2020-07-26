@@ -1,5 +1,5 @@
 ---
-title: biography
+title: Biography
 ---
 ![Headshot image showing Hugo Herman-Wilson](./headshot.jpg)
 
@@ -10,7 +10,3 @@ Hugo was an Alvarez Young Artist with Garsington Opera in 2019, a Britten-Pears 
 Hugo has a growing reputation for contemporary music, recently performing Birtwistle's *Three Songs from the Holy Forest* and Theo Chandler's *The Divining Lair* at Snape Maltings with conductor Jessica Cottis. He has also collaborated on and premiered in a number of other projects, including,  *Last Thursday* an opera by Gareth Mattey and Lewis Coenen-Rowe as part of the Collisions Festival 2018;  *threads*, a chamber opera combining music by Stephane Crayton, dance, theatre and Monteverdi; *Free // Falling*, an electroacoustic piece for solo voice by Matthew Lomax; and *We the People*, a satirical piece for voice and piano by Stella Fiorenzoli with libretto by Donald Trump. Other contemporary repertoire includes Elliot Carter's *Poems of Louis Zukofsky* for voice and clarinet and extracts from the roles of Pig in Knussen's *Higglety Pigglety Pop* and The Protector in George Benjamin's *Written on Skin*.
 
 Hugo will be joining the chorus of Glyndebourne Festival Opera for their 2021 season.
-
-
-
-He's also a massive LAD
