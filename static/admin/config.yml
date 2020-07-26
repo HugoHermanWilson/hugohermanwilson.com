@@ -1,0 +1,26 @@
+backend:
+  name: github
+  repo: HugoHermanWilson/hugohermanwilson.com
+
+media_folder: static/assets
+public_folder: /assets
+
+collections:
+  - name: events
+    label: Engagements
+    folder: src/pages/events
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-event"
+    fields:
+      - { name: name, label: Name }
+      - { name: date, label: Date, widget: datetime }
+      - { name: venue, label: Venue }
+      - { name: body, label: Body, widget: markdown }
+  - name: videos
+    label: Singing Videos
+    folder: src/pages/videos
+    create: true
+    slug: "video-{{slug}}"
+    fields:
+      - { name: title, label: Title }
+      - { name: body, label: YouTube Embed HTML, widget: markdown }
