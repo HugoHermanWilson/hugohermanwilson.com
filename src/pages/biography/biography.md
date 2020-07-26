@@ -1,3 +1,6 @@
+---
+title: biography
+---
 ![Headshot image showing Hugo Herman-Wilson](./headshot.jpg)
 
 British baritone Hugo Herman-Wilson studied at the University of Cambridge and the Royal College of Music, supported by the Aldama scholarship, the Josephine Baker Trust and the Help Musicians UK Maidment Award. He learns with Ben Johnson.
