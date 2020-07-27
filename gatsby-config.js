@@ -1,3 +1,7 @@
+require('dotenv').config({
+    path: `.env.${process.env.NODE_ENV}`
+}); // without specifying path ENVs will be undefined when
+
 module.exports = {
     siteMetadata: {
         title: 'Hugo Herman-Wilson',
