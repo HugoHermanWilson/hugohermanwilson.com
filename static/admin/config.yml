@@ -56,3 +56,13 @@ collections:
       - { name: isRecital, label: Display on website, widget: boolean, default: true }
       - { name: recital, label: Recital details (italicise with _underscores_), widget: string, comment: "recital: Use underscores to italicise titles, e.g Vaughan Williams' _Serenade to Music_" }
       - { name: approxDate, label: Date (YYYY-MM-DD), comment: "approxDate: use YYYY-MM-DD format. This data's used in the CMS only", widget: string }
+  - name: image-captions
+    label: 'Image Captions'
+    folder: src/pages/image-captions
+    create: true
+    slug: "{{imageFilename}}-caption"
+    identifier_field: imageFilename
+    sortableFields: [imageFilename]
+    fields:
+      - { name: imageFilename, label: Image file name (no extension), widget: string}
+      - { name: caption, label: Caption, widget: string, comment: "caption: Shows when the image is opened in Lightbox mode" }
