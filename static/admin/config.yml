@@ -11,6 +11,7 @@ collections:
     folder: src/pages/events
     create: true
     slug: "{{year}}-{{month}}-{{day}}-event"
+    sortableFields: [name, date]
     fields:
       - { name: name, label: Name }
       - { name: date, label: Date, widget: datetime }
