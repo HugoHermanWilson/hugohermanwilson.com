@@ -4,16 +4,14 @@ import { graphql } from 'gatsby';
 import Template from '../layouts/Template';
 import Menu from '../components/Menu';
 import Body from '../components/Body';
-// import ExampleDynamicLoading from '../components/ExampleDynamicLoading';
-// import ExampleWithLightbox from '../components/ExampleWithLightbox';
 import HybridGallery from '../components/HybridGallery';
 
 export default function GalleryPage(props) {
     const captionsObject = props.data.allMarkdownRemark.edges.reduce(
-        (object, edge) => {
-            object[edge.node.frontmatter.imageFilename] =
+        (accumulator, edge) => {
+            accumulator[edge.node.frontmatter.imageFilename] =
                 edge.node.frontmatter.caption;
-            return object;
+            return accumulator;
         },
         {}
     );
@@ -40,12 +38,6 @@ export default function GalleryPage(props) {
         </Template>
     );
 }
-
-GalleryPage.propTypes = {
-    location: PropTypes.shape({
-        pathname: PropTypes.string
-    }).isRequired
-};
 
 export const imagesQuery = graphql`
     query ImageQuery {
@@ -88,3 +80,45 @@ export const imagesQuery = graphql`
         }
     }
 `;
+
+GalleryPage.propTypes = {
+    location: PropTypes.shape({
+        pathname: PropTypes.string
+    }).isRequired,
+    data: PropTypes.shape({
+        allFile: PropTypes.shape({
+            edges: PropTypes.arrayOf(
+                PropTypes.shape({
+                    node: PropTypes.shape({
+                        id: PropTypes.string,
+                        absolutePath: PropTypes.string,
+                        name: PropTypes.string,
+                        childImageSharp: PropTypes.shape({
+                            fluid: PropTypes.shape({
+                                originalName: PropTypes.string,
+                                srcSet: PropTypes.string,
+                                src: PropTypes.string,
+                                presentationWidth: PropTypes.number,
+                                presentationHeight: PropTypes.number,
+                                sizes: PropTypes.string
+                            })
+                        })
+                    })
+                })
+            )
+        }),
+        allMarkdownRemark: PropTypes.shape({
+            edges: PropTypes.arrayOf(
+                PropTypes.shape({
+                    node: PropTypes.shape({
+                        id: PropTypes.string,
+                        frontmatter: PropTypes.shape({
+                            imageFilename: PropTypes.string,
+                            caption: PropTypes.string
+                        })
+                    })
+                })
+            )
+        })
+    }).isRequired
+};
