@@ -9,9 +9,14 @@ import Body from '../components/Body';
 import HybridGallery from '../components/HybridGallery';
 
 export default function GalleryPage(props) {
-    const captionsData =
-        props.data.allMarkdownRemark.edges[0].node.rawMarkdownBody;
-    const captionsObject = JSON.parse(captionsData.replace('\n', ''));
+    const captionsObject = props.data.allMarkdownRemark.edges.reduce(
+        (object, edge) => {
+            object[edge.node.frontmatter.imageFilename] =
+                edge.node.frontmatter.caption;
+            return object;
+        },
+        {}
+    );
 
     const photos = props.data.allFile.edges.map(element => {
         const node = element.node;
@@ -25,7 +30,6 @@ export default function GalleryPage(props) {
         };
     });
 
-    console.log(photos);
     return (
         <Template>
             <Menu path={props.location.pathname} />
@@ -47,8 +51,8 @@ export const imagesQuery = graphql`
     query ImageQuery {
         allFile(
             filter: {
-                absolutePath: { regex: "//pages/images/" }
-                ext: { ne: ".md" }
+                name: { ne: "splash-image" }
+                absolutePath: { regex: "//assets/" }
             }
         ) {
             edges {
@@ -70,12 +74,15 @@ export const imagesQuery = graphql`
             }
         }
         allMarkdownRemark(
-            filter: { fileAbsolutePath: { regex: "//pages/images/" } }
+            filter: { fileAbsolutePath: { regex: "//pages/image-captions/" } }
         ) {
             edges {
                 node {
                     id
-                    rawMarkdownBody
+                    frontmatter {
+                        imageFilename
+                        caption
+                    }
                 }
             }
         }
