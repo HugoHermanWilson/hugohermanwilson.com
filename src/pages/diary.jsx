@@ -5,37 +5,38 @@ import { graphql } from 'gatsby';
 import Template from '../layouts/Template';
 import Menu from '../components/Menu';
 import Body from '../components/Body';
+import Event from '../components/Event';
 
-function Events(props) {
-    const events = props.data.allMarkdownRemark.edges;
+function Diary(props) {
+    const renderEventList = () => {
+        const events = props.data.allMarkdownRemark.edges;
+
+        return events.map(({ node }) => {
+            return (
+                <Event
+                    slug={node.fields.slug}
+                    title={node.frontmatter.name}
+                    date={node.frontmatter.date}
+                    venue={node.frontmatter.venue}
+                    externalLink={node.frontmatter.externalLink}
+                    html={node.html}
+                />
+            );
+        });
+    };
 
     return (
         <Template>
             <Menu path={props.location.pathname} />
             <Body className=" center-text body-font">
-                <h1 className="title-font large-text">Events</h1>
-                {events.map(({ node }) => {
-                    const title = node.frontmatter.name;
-                    const venue = node.frontmatter.venue;
-                    return (
-                        <div key={node.fields.slug}>
-                            <h3>{title}</h3>
-                            <small>{node.frontmatter.date}</small>
-                            <p>Venue: {venue}</p>
-                            <p
-                                dangerouslySetInnerHTML={{
-                                    __html: node.html
-                                }}
-                            />
-                        </div>
-                    );
-                })}
+                <h1 className="title-font large-text">Diary</h1>
+                {renderEventList()}
             </Body>
         </Template>
     );
 }
 
-export default Events;
+export default Diary;
 
 export const eventsQuery = graphql`
     query eventsQuery {
@@ -56,8 +57,9 @@ export const eventsQuery = graphql`
                     html
                     frontmatter {
                         name
-                        date(formatString: "DD MMMM, YYYY")
+                        date
                         venue
+                        externalLink
                     }
                 }
             }
@@ -65,7 +67,7 @@ export const eventsQuery = graphql`
     }
 `;
 
-Events.propTypes = {
+Diary.propTypes = {
     location: PropTypes.shape({
         pathname: PropTypes.string
     }).isRequired,
