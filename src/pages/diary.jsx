@@ -7,7 +7,7 @@ import Menu from '../components/Menu';
 import Body from '../components/Body';
 import Event from '../components/Event';
 
-function Events(props) {
+function Diary(props) {
     const renderEventList = () => {
         const events = props.data.allMarkdownRemark.edges;
 
@@ -18,6 +18,7 @@ function Events(props) {
                     title={node.frontmatter.name}
                     date={node.frontmatter.date}
                     venue={node.frontmatter.venue}
+                    externalLink={node.frontmatter.externalLink}
                     html={node.html}
                 />
             );
@@ -28,14 +29,14 @@ function Events(props) {
         <Template>
             <Menu path={props.location.pathname} />
             <Body className=" center-text body-font">
-                <h1 className="title-font large-text">Events</h1>
+                <h1 className="title-font large-text">Diary</h1>
                 {renderEventList()}
             </Body>
         </Template>
     );
 }
 
-export default Events;
+export default Diary;
 
 export const eventsQuery = graphql`
     query eventsQuery {
@@ -58,6 +59,7 @@ export const eventsQuery = graphql`
                         name
                         date
                         venue
+                        externalLink
                     }
                 }
             }
@@ -65,7 +67,7 @@ export const eventsQuery = graphql`
     }
 `;
 
-Events.propTypes = {
+Diary.propTypes = {
     location: PropTypes.shape({
         pathname: PropTypes.string
     }).isRequired,

@@ -83,4 +83,23 @@
     margin-top: -0.5em;
 }
 
+.external-link {
+    display: inline-block;
+    float: right;
+}
+
+.external-link:link{
+    color: #696969;
+}
+
+.external-link:visited{
+    color: #f7c6df;
+}
+
+.external-link:hover{
+    color: #f7c6df;
+}
+
+.external-link:active{
+    color: #f7c6df;
 }

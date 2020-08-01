@@ -31,8 +31,8 @@ export default function MobileMenu(props) {
             <a className={css.item} href="/gallery">
                 Gallery
             </a>
-            <a className={css.item} href="/events">
-                Events
+            <a className={css.item} href="/diary">
+                Diary
             </a>
             <a className={css.item} href="/contact">
                 Contact

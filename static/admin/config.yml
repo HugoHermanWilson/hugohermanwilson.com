@@ -7,7 +7,7 @@ public_folder: /assets
 
 collections:
   - name: events
-    label: Engagements
+    label: Diary entries
     folder: src/pages/events
     create: true
     slug: "{{year}}-{{month}}-{{day}}-event"
@@ -16,6 +16,7 @@ collections:
       - { name: name, label: Name }
       - { name: date, label: Date, widget: datetime }
       - { name: venue, label: Venue }
+      - { name: externalLink, label: URL for event/tickets (if any) }
       - { name: body, label: Body, widget: markdown }
   - name: videos
     label: Singing Videos
