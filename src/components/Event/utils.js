@@ -1,19 +1,27 @@
+import moment from 'moment';
+
+moment().format();
+
 const dateNumber = date => {
-    console.log(date);
-    console.log(/^\d{4}-\d{2}-\d{2}/.test(date));
     if (/^\d{4}-\d{2}-\d{2}/.test(date)) {
-        return /(?<=-)\d{2}(?=T)/.exec(date)[0];
+        const dateNumberString = /(?<=-)\d{2}(?=T)/.exec(date)[0];
+        if (dateNumberString[0] === '1' || dateNumberString[1] === '1') {
+            return dateNumberString[0] + ' ' + dateNumberString[1]; // dealing with non monospaced font
+        }
+        return dateNumberString;
     }
 
     return '00';
 };
 
 const dateMonth = date => {
-    return 'AUG';
+    const month = moment(date).format('MMM');
+    return month === 'Invalid date' ? 'XXX' : month;
 };
 
 const dateString = date => {
-    return 'date string';
+    const string = moment(date).format('h:mm a, ddd Do MMMM');
+    return string;
 };
 
 export { dateNumber, dateMonth, dateString };
