@@ -16,7 +16,7 @@ collections:
       - { name: name, label: Name }
       - { name: date, label: Date, widget: datetime }
       - { name: venue, label: Venue }
-      - { name: externalLink, label: URL for event/tickets (if any) }
+      - { name: externalLink, label: URL for event/tickets (if any), default: null }
       - { name: body, label: Body, widget: markdown }
   - name: videos
     label: Singing Videos
