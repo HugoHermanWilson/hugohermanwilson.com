@@ -11,13 +11,16 @@ const Event = ({ slug, title, venue, date, html }) => {
                 <p className={css.dateNumber}>{dateNumber(date)}</p>
                 <p className={css.dateMonth}>{dateMonth(date)}</p>
             </div>
-            <p className={css.date}>{dateString(date)}</p>
-            <p className={css.venue}>Venue: {venue}</p>
-            <p
-                dangerouslySetInnerHTML={{
-                    __html: html
-                }}
-            />
+            <div className={css.detailsBlock}>
+                <h3 className={css.title}>{title}</h3>
+                <p className={css.venue}>{venue}</p>
+                <p className={css.date}>{dateString(date)}</p>
+                <p
+                    dangerouslySetInnerHTML={{
+                        __html: html
+                    }}
+                />
+            </div>
         </div>
     );
 };
