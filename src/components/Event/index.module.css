@@ -1,0 +1,33 @@
+.container {
+    text-align: left;
+    width: 100%;
+}
+
+.date-block {
+    font-family: 'Staatliches', sans-serif;
+    margin: 0;
+    width: fit-content;
+    text-align: center;
+}
+
+.date-number {
+    margin: 0;
+    font-size: 10vw;
+}
+
+.date-month {
+    font-size: 5vw;
+    letter-spacing: 1vw;
+    margin: 0;
+    position: relative;
+    top: -0.75em;
+    left: 0em;
+}
+
+.title {
+    color: black;
+}
+
+.date, .venue {
+    color: grey;
+}
