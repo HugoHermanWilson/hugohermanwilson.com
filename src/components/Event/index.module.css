@@ -14,8 +14,8 @@
     border-left-color: #dedede;
     border-right-color: #dedede;
     border-bottom-color: #d6d6d6;
-    border-radius: 5px;
-    box-shadow: #d6d6d6 5px 5px 5px -5px;
+    box-shadow: #f7c6df 5px 5px 5px -5px;
+    border-radius: 3px;
 
     padding: 5px;
 
@@ -85,6 +85,7 @@
 
 .external-link {
     display: inline-block;
+    font-size: 150%;
     float: right;
 }
 
