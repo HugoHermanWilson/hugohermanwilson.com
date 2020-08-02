@@ -30,7 +30,7 @@
     /* Larger than mobile - tablet and desktop */
     .body {
         margin-top: 2rem;
-        width: 70vw;
+        width: 80vw;
     }
 }
 
@@ -38,7 +38,7 @@
     /* Larger than tablet - desktop */
     .body {
         margin-top: 2rem;
-        width: 50vw;
+        width: 70vw;
     }
 }
 

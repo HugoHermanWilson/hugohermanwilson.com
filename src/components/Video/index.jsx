@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import css from './index.module.css';
 
-const Video = ({ data }) => {
+const Video = ({ data, height }) => {
     const node = data.node;
     const title = node.frontmatter.title;
     const slug = node.fields.slug;
@@ -11,6 +11,7 @@ const Video = ({ data }) => {
         <div key={slug}>
             <p>{title}</p>
             <div
+                style={{ height, width: '100%' }}
                 className={css.ytIframe}
                 dangerouslySetInnerHTML={{
                     __html: html
