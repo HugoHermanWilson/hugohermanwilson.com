@@ -15,6 +15,7 @@ export default function MobileMenu(props) {
             className={`title-font ${css.container} ${
                 css[menuStateClass(props)]
             }`}
+            role="menu"
         >
             <Icon
                 className={`${css.item} ${css.icon}`}
@@ -22,19 +23,19 @@ export default function MobileMenu(props) {
                 onClick={props.toggleMenu}
                 role="button"
             />
-            <a className={css.item} href="/biography">
+            <a className={css.item} href="/biography" role="menuitem">
                 Biography
             </a>
-            <a className={css.item} href="/listen">
+            <a className={css.item} href="/listen" role="menuitem">
                 Listen
             </a>
-            <a className={css.item} href="/gallery">
+            <a className={css.item} href="/gallery" role="menuitem">
                 Gallery
             </a>
-            <a className={css.item} href="/diary">
+            <a className={css.item} href="/diary" role="menuitem">
                 Diary
             </a>
-            <a className={css.item} href="/contact">
+            <a className={css.item} href="/contact" role="menuitem">
                 Contact
             </a>
         </nav>

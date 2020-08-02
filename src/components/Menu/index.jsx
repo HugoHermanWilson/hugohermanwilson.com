@@ -58,11 +58,17 @@ export default class Menu extends React.Component {
             >
                 {this.getCorrectHeaderTags()}
 
-                <h2
+                <div
                     className={`${css.oneLine} ${css.subHeader} ${css.alignRight} ${css.menuIcon} pink`}
                 >
-                    <Icon name="bars" onClick={this.toggleMenuOpen} />
-                </h2>
+                    <Icon
+                        name="bars"
+                        onClick={this.toggleMenuOpen}
+                        aria-haspopup="true"
+                        aria-controls="MobileMenu"
+                        aria-expanded={this.state.menuOpen}
+                    />
+                </div>
                 <MobileMenu
                     toggleMenu={this.toggleMenuOpen}
                     visible={this.state.menuOpen}
