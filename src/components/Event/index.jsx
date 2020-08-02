@@ -19,6 +19,7 @@ const Event = ({ title, venue, date, externalLink, html }) => {
                     <a
                         className={css.externalLink}
                         href={externalLink}
+                        rel="noreferrer"
                         target="_blank"
                     >
                         <Icon name="external alternate" />
@@ -28,6 +29,7 @@ const Event = ({ title, venue, date, externalLink, html }) => {
                 <p className={css.venue}>{venue}</p>
                 <p className={css.date}>{dateString(date)}</p>
                 <div
+                    // eslint-disable-next-line react/no-danger
                     dangerouslySetInnerHTML={{
                         __html: html
                     }}
@@ -38,3 +40,16 @@ const Event = ({ title, venue, date, externalLink, html }) => {
 };
 
 export default Event;
+
+Event.propTypes = {
+    title: PropTypes.string.isRequired,
+    venue: PropTypes.string.isRequired,
+    date: PropTypes.string.isRequired,
+    externalLink: PropTypes.string,
+    html: PropTypes.string
+};
+
+Event.defaultProps = {
+    externalLink: '',
+    html: '<p></p>'
+};

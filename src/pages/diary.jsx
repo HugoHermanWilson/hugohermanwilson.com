@@ -29,6 +29,7 @@ function Diary(props) {
                     />
                 );
             }
+            return null;
         });
 
         if (eventsJSX.filter(x => x).length === 0) {
@@ -55,6 +56,7 @@ function Diary(props) {
                     />
                 );
             }
+            return null;
         });
 
         if (eventsJSX.filter(x => x).length === 0) {

@@ -7,3 +7,11 @@ const Divider = ({ text }) => {
 };
 
 export default Divider;
+
+Divider.propTypes = {
+    text: PropTypes.string
+};
+
+Divider.defaultProps = {
+    text: ''
+};
