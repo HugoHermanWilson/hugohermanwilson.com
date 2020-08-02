@@ -67,4 +67,10 @@
     margin-left: auto;
     border-radius: 10px;
     padding: 0.5em 1em;
-} 
+}
+
+.send {
+    display: inline-block;
+    font-size: initial;
+    margin: 0;
+}

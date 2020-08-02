@@ -69,7 +69,7 @@ class ContactForm extends React.Component {
                 />
                 <button className={css.button} type="submit">
                     <Icon name="paper plane outline" />
-                    Send
+                    <p className={css.send}>Send</p>
                 </button>
             </form>
         );
