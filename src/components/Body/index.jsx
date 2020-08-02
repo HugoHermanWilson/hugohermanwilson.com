@@ -12,5 +12,10 @@ export default function Body(props) {
 
 Body.propTypes = {
     className: PropTypes.string.isRequired,
-    children: PropTypes.arrayOf(PropTypes.element).isRequired
+    children: PropTypes.arrayOf(
+        PropTypes.oneOfType([
+            PropTypes.arrayOf(PropTypes.element),
+            PropTypes.element
+        ])
+    ).isRequired
 };

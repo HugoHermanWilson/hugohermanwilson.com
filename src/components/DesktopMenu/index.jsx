@@ -34,5 +34,9 @@ export default function DesktopMenu(props) {
 }
 
 DesktopMenu.propTypes = {
-    visible: PropTypes.bool.isRequired
+    visible: PropTypes.bool
+};
+
+DesktopMenu.defaultProps = {
+    visible: true
 };
