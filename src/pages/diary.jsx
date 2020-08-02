@@ -49,7 +49,7 @@ function Diary(props) {
             }
         });
 
-        return eventsJSX;
+        return eventsJSX.reverse();
     };
 
     return (
@@ -76,7 +76,7 @@ export const eventsQuery = graphql`
             }
         }
         allMarkdownRemark(
-            sort: { fields: [frontmatter___date], order: DESC }
+            sort: { fields: [frontmatter___date], order: ASC }
             filter: { fileAbsolutePath: { regex: "/pages/events/" } }
         ) {
             edges {
