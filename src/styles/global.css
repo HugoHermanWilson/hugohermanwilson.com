@@ -50,12 +50,6 @@ iframe {
     height: inherit;
 }
 
-@media screen and (min-width: 500px){
-    iframe {
-        width: 450px;
-    }
-}
-
 .Biography p span.gatsby-resp-image-wrapper {
     border-radius: 4px;
     overflow: hidden;

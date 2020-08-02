@@ -5,6 +5,7 @@ import { graphql } from 'gatsby';
 import Template from '../layouts/Template';
 import Menu from '../components/Menu';
 import Body from '../components/Body';
+import VideoList from '../components/VideoList';
 
 export default function Listen(props) {
     const videos = props.data.allMarkdownRemark.edges;
@@ -14,30 +15,7 @@ export default function Listen(props) {
             <Menu path={props.location.pathname} />
             <Body className=" center-text body-font">
                 <h1 className="title-font large-text">Listen</h1>
-                <div id="Videos">
-                    {videos.map(({ node }) => {
-                        const title = node.frontmatter.title;
-                        const slug = node.fields.slug;
-                        const html = node.html;
-
-                        return (
-                            <div key={slug}>
-                                <p>{title}</p>
-                                <div
-                                    style={{
-                                        height: '300px',
-                                        display: 'flex',
-                                        flexDirection: 'column',
-                                        alignItems: 'center'
-                                    }}
-                                    dangerouslySetInnerHTML={{
-                                        __html: html
-                                    }}
-                                />
-                            </div>
-                        );
-                    })}
-                </div>
+                <VideoList videos={videos} />
             </Body>
         </Template>
     );

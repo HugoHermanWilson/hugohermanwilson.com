@@ -43,8 +43,8 @@
     }
 
     .date-block {
-        margin-left: 1.5em;
-        margin-right: 1.5em;
+        margin-left: 2em;
+        margin-right: 3em;
     }
 
     .details-block {
@@ -70,6 +70,15 @@
     margin: 0;
     position: relative;
     top: -0.75em;
+    left: 0em;
+}
+
+.date-year {
+    font-size: 3vw;
+    letter-spacing: 1vw;
+    margin: 0;
+    position: relative;
+    top: -1.75em;
     left: 0em;
 }
 
