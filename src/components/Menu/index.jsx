@@ -18,18 +18,32 @@ export default class Menu extends React.Component {
         this.setState(prevState => ({ menuOpen: !prevState.menuOpen }));
     };
 
-    getCorrectHeaderTag = () => {
+    getCorrectHeaderTags = () => {
         if (this.props.path === '/') {
             return (
-                <h1 className={`${css.mainHeader}`}>
-                    <a href="/">Hugo Herman-Wilson</a>
-                </h1>
+                <>
+                    <h1 className={`${css.mainHeader}`}>
+                        <a href="/">Hugo Herman-Wilson</a>
+                    </h1>
+                    <h2
+                        className={`${css.oneLine} ${css.subHeader} ${css.baritone}`}
+                    >
+                        Baritone
+                    </h2>
+                </>
             );
         }
         return (
-            <h2 className={`${css.mainHeader}`}>
-                <a href="/">Hugo Herman-Wilson</a>
-            </h2>
+            <>
+                <p className={`${css.mainHeader}`}>
+                    <a href="/">Hugo Herman-Wilson</a>
+                </p>
+                <p
+                    className={`${css.oneLine} ${css.subHeader} ${css.baritone}`}
+                >
+                    Baritone
+                </p>
+            </>
         );
     };
 
@@ -42,17 +56,19 @@ export default class Menu extends React.Component {
                 }`}
                 ref={this.props.menuRef}
             >
-                {this.getCorrectHeaderTag()}
-                <h2
-                    className={`${css.oneLine} ${css.subHeader} ${css.baritone}`}
+                {this.getCorrectHeaderTags()}
+
+                <div
+                    className={`${css.oneLine} ${css.subHeader} ${css.alignRight} ${css.menuIcon}`}
                 >
-                    Baritone
-                </h2>
-                <h2
-                    className={`${css.oneLine} ${css.subHeader} ${css.alignRight} ${css.menuIcon} pink`}
-                >
-                    <Icon name="bars" onClick={this.toggleMenuOpen} />
-                </h2>
+                    <Icon
+                        name="bars"
+                        onClick={this.toggleMenuOpen}
+                        aria-haspopup="true"
+                        aria-controls="MobileMenu"
+                        aria-expanded={this.state.menuOpen}
+                    />
+                </div>
                 <MobileMenu
                     toggleMenu={this.toggleMenuOpen}
                     visible={this.state.menuOpen}
