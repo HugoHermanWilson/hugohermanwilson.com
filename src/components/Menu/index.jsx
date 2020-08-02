@@ -59,7 +59,7 @@ export default class Menu extends React.Component {
                 {this.getCorrectHeaderTags()}
 
                 <div
-                    className={`${css.oneLine} ${css.subHeader} ${css.alignRight} ${css.menuIcon} pink`}
+                    className={`${css.oneLine} ${css.subHeader} ${css.alignRight} ${css.menuIcon}`}
                 >
                     <Icon
                         name="bars"
