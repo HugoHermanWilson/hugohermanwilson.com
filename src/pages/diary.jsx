@@ -19,6 +19,7 @@ function Diary(props) {
                 // event is in the future or today
                 return (
                     <Event
+                        key={node.fields.slug}
                         slug={node.fields.slug}
                         title={node.frontmatter.name}
                         date={node.frontmatter.date}
@@ -45,7 +46,7 @@ function Diary(props) {
                 // event is in the past
                 return (
                     <Event
-                        slug={node.fields.slug}
+                        key={node.fields.slug}
                         title={node.frontmatter.name}
                         date={node.frontmatter.date}
                         venue={node.frontmatter.venue}
@@ -67,12 +68,10 @@ function Diary(props) {
         <Template>
             <Menu path={props.location.pathname} />
             <Body className=" center-text body-font">
-                <h1 className="title-font large-text" key="diary-h1">
-                    Diary
-                </h1>
-                <Divider key="divider-1" text="Coming up" />
+                <h1 className="title-font large-text">Diary</h1>
+                <Divider text="Coming up" />
                 {renderFutureEventList()}
-                <Divider key="divider-2" text="Past events" />
+                <Divider text="Past events" />
                 {renderPastEventList()}
             </Body>
         </Template>

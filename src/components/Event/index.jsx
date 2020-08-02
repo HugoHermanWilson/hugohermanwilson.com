@@ -4,9 +4,9 @@ import { Icon } from 'semantic-ui-react';
 import { dateNumber, dateMonth, dateString } from './utils';
 import css from './index.module.css';
 
-const Event = ({ slug, title, venue, date, externalLink, html }) => {
+const Event = ({ title, venue, date, externalLink, html }) => {
     return (
-        <div className={css.container} key={slug}>
+        <div className={css.container}>
             <div className={css.dateBlock}>
                 <p className={css.dateNumber}>{dateNumber(date)}</p>
                 <p className={css.dateMonth}>{dateMonth(date)}</p>
