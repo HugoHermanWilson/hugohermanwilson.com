@@ -1,0 +1,14 @@
+.text {
+    display: block;
+    width: 100%;
+    margin-bottom: 2rem;
+
+    background-color: white;
+    color: #696969;
+    border-bottom:#696969 solid 1px;
+
+    font-size: 1.5rem;
+    font-family: 'Staatliches', sans-serif;
+    text-align: left;
+    
+}

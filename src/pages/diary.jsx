@@ -7,6 +7,7 @@ import Template from '../layouts/Template';
 import Menu from '../components/Menu';
 import Body from '../components/Body';
 import Event from '../components/Event';
+import Divider from '../components/Divider';
 
 function Diary(props) {
     const renderFutureEventList = () => {
@@ -59,7 +60,9 @@ function Diary(props) {
                 <h1 className="title-font large-text" key="diary-h1">
                     Diary
                 </h1>
+                <Divider key="divider-1" text="Coming up" />
                 {renderFutureEventList()}
+                <Divider key="divider-2" text="Past events" />
                 {renderPastEventList()}
             </Body>
         </Template>
