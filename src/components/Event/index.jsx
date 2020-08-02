@@ -24,7 +24,7 @@ const Event = ({ slug, title, venue, date, externalLink, html }) => {
                 <h3 className={css.title}>{title}</h3>
                 <p className={css.venue}>{venue}</p>
                 <p className={css.date}>{dateString(date)}</p>
-                <p
+                <div
                     dangerouslySetInnerHTML={{
                         __html: html
                     }}
