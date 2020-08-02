@@ -7,6 +7,7 @@ import Template from '../layouts/Template';
 import Menu from '../components/Menu';
 import Body from '../components/Body';
 import Event from '../components/Event';
+import NoEvent from '../components/NoEvent';
 import Divider from '../components/Divider';
 
 function Diary(props) {
@@ -28,6 +29,11 @@ function Diary(props) {
                 );
             }
         });
+
+        if (eventsJSX.filter(x => x).length === 0) {
+            return <NoEvent />;
+        }
+
         return eventsJSX;
     };
 
@@ -49,6 +55,10 @@ function Diary(props) {
                 );
             }
         });
+
+        if (eventsJSX.filter(x => x).length === 0) {
+            return <NoEvent />;
+        }
 
         return eventsJSX.reverse();
     };

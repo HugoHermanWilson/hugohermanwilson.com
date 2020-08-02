@@ -1,0 +1,21 @@
+.container {
+    text-align: left;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+    box-sizing: border-box;
+
+    border-style: solid;
+    border-width: 1px;
+    border-top-color: #ededed;
+    border-left-color: #dedede;
+    border-right-color: #dedede;
+    border-bottom-color: #d6d6d6;
+    box-shadow: #f7c6df 5px 5px 5px -5px;
+    border-radius: 3px;
+
+    color: #696969;
+}
