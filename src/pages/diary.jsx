@@ -2,35 +2,65 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
+import moment from 'moment';
 import Template from '../layouts/Template';
 import Menu from '../components/Menu';
 import Body from '../components/Body';
 import Event from '../components/Event';
 
 function Diary(props) {
-    const renderEventList = () => {
+    const renderFutureEventList = () => {
         const events = props.data.allMarkdownRemark.edges;
 
-        return events.map(({ node }) => {
-            return (
-                <Event
-                    slug={node.fields.slug}
-                    title={node.frontmatter.name}
-                    date={node.frontmatter.date}
-                    venue={node.frontmatter.venue}
-                    externalLink={node.frontmatter.externalLink}
-                    html={node.html}
-                />
-            );
+        const eventsJSX = events.map(({ node }) => {
+            if (!moment(node.frontmatter.date).isBefore(moment(), 'day')) {
+                // event is in the future or today
+                return (
+                    <Event
+                        slug={node.fields.slug}
+                        title={node.frontmatter.name}
+                        date={node.frontmatter.date}
+                        venue={node.frontmatter.venue}
+                        externalLink={node.frontmatter.externalLink}
+                        html={node.html}
+                    />
+                );
+            }
         });
+        return eventsJSX;
+    };
+
+    const renderPastEventList = () => {
+        const events = props.data.allMarkdownRemark.edges;
+
+        const eventsJSX = events.map(({ node }) => {
+            if (moment(node.frontmatter.date).isBefore(moment(), 'day')) {
+                // event is in the past
+                return (
+                    <Event
+                        slug={node.fields.slug}
+                        title={node.frontmatter.name}
+                        date={node.frontmatter.date}
+                        venue={node.frontmatter.venue}
+                        externalLink={node.frontmatter.externalLink}
+                        html={node.html}
+                    />
+                );
+            }
+        });
+
+        return eventsJSX;
     };
 
     return (
         <Template>
             <Menu path={props.location.pathname} />
             <Body className=" center-text body-font">
-                <h1 className="title-font large-text">Diary</h1>
-                {renderEventList()}
+                <h1 className="title-font large-text" key="diary-h1">
+                    Diary
+                </h1>
+                {renderFutureEventList()}
+                {renderPastEventList()}
             </Body>
         </Template>
     );
