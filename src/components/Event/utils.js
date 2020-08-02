@@ -19,9 +19,19 @@ const dateMonth = date => {
     return month === 'Invalid date' ? 'XXX' : month;
 };
 
+const dateYear = date => {
+    const year = moment(date).format('YYYY');
+    return year === 'Invalid date' ? 'XXXX' : year;
+};
+
 const dateString = date => {
+    if (dateYear(date) !== `${new Date().getFullYear()}`) {
+        const string = moment(date).format('h:mm a, ddd Do MMMM YYYY');
+        return string;
+    }
+
     const string = moment(date).format('h:mm a, ddd Do MMMM');
     return string;
 };
 
-export { dateNumber, dateMonth, dateString };
+export { dateNumber, dateMonth, dateYear, dateString };

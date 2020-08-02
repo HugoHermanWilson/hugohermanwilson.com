@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Icon } from 'semantic-ui-react';
-import { dateNumber, dateMonth, dateString } from './utils';
+import { dateNumber, dateMonth, dateYear, dateString } from './utils';
 import css from './index.module.css';
 
 const Event = ({ slug, title, venue, date, externalLink, html }) => {
@@ -10,6 +10,9 @@ const Event = ({ slug, title, venue, date, externalLink, html }) => {
             <div className={css.dateBlock}>
                 <p className={css.dateNumber}>{dateNumber(date)}</p>
                 <p className={css.dateMonth}>{dateMonth(date)}</p>
+                {dateYear(date) !== `${new Date().getFullYear()}` ? (
+                    <p className={css.dateYear}>{dateYear(date)}</p>
+                ) : null}
             </div>
             <div className={css.detailsBlock}>
                 {externalLink ? (
