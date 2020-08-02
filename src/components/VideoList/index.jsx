@@ -1,12 +1,12 @@
+/* eslint-disable no-undef */
 import React, { useState, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
-import css from './index.module.css';
 import Video from '../Video';
 
-const VideoList = ({ videos, videoWidth }) => {
+const VideoList = ({ videos }) => {
     const ref = useRef();
     const [videoListWidth, setVideoListWidth] = useState('100%');
-    const [videoHeight, setVideoHeight] = useState(null);
+    const [videoHeight, setVideoHeight] = useState('300px');
 
     useEffect(() => {
         if (document === undefined) {
@@ -18,12 +18,13 @@ const VideoList = ({ videos, videoWidth }) => {
             console.log('in onIframeLoad');
             const width = event.target.clientWidth;
             const goldenRatio = 1.61803398875;
-            setVideoListWidth(width);
-            setVideoHeight(width / goldenRatio); // make height proportional to width
+            setVideoListWidth(`${width}px`);
+            setVideoHeight(`${width / goldenRatio}px`); // make height proportional to width
         };
 
         document.querySelector('iframe').addEventListener('load', onIframeLoad);
 
+        // eslint-disable-next-line consistent-return
         return () => {
             document
                 .querySelector('iframe')
@@ -33,19 +34,38 @@ const VideoList = ({ videos, videoWidth }) => {
 
     const renderVideoList = () => {
         return videos.map(video => {
-            return <Video data={video} height={videoHeight} />;
+            return (
+                <Video
+                    key={video.node.fields.slug}
+                    data={video}
+                    height={videoHeight}
+                />
+            );
         });
     };
 
     return (
-        <div
-            className={css.videoList}
-            style={{ width: videoListWidth }}
-            ref={ref}
-        >
+        <div style={{ width: videoListWidth }} ref={ref}>
             {renderVideoList()}
         </div>
     );
 };
 
 export default VideoList;
+
+VideoList.propTypes = {
+    videos: PropTypes.arrayOf(
+        PropTypes.shape({
+            edges: PropTypes.arrayOf(
+                PropTypes.shape({
+                    node: PropTypes.shape({
+                        frontmatter: PropTypes.shape({
+                            title: PropTypes.string
+                        }),
+                        html: PropTypes.string
+                    })
+                })
+            )
+        })
+    ).isRequired
+};

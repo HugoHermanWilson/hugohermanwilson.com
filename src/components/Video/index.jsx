@@ -5,14 +5,14 @@ import css from './index.module.css';
 const Video = ({ data, height }) => {
     const node = data.node;
     const title = node.frontmatter.title;
-    const slug = node.fields.slug;
     const html = node.html;
     return (
-        <div key={slug}>
+        <div>
             <p>{title}</p>
             <div
                 style={{ height, width: '100%' }}
                 className={css.ytIframe}
+                // eslint-disable-next-line react/no-danger
                 dangerouslySetInnerHTML={{
                     __html: html
                 }}
@@ -22,3 +22,15 @@ const Video = ({ data, height }) => {
 };
 
 export default Video;
+
+Video.propTypes = {
+    data: PropTypes.shape({
+        node: PropTypes.shape({
+            frontmatter: PropTypes.shape({
+                title: PropTypes.string
+            }),
+            html: PropTypes.string
+        })
+    }).isRequired,
+    height: PropTypes.string.isRequired
+};
