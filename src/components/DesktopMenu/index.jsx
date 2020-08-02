@@ -12,7 +12,6 @@ export default function DesktopMenu(props) {
             id="DesktopMenu"
             className={`title-font ${css.container}
             ${css[menuStateClass(props)]}`}
-            role="menu"
         >
             <a className={css.item} href="/biography" role="menuitem">
                 Biography
