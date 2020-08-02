@@ -3,4 +3,12 @@
     display: flex;
     flex-direction: 'column';
     align-items: 'center';
+    margin-bottom: 2em;
+}
+
+.video-title {
+    border-top:  #f7c6df solid 4px;
+    padding-top: 16px;
+    text-align: left;
+    width: 100%;
 }

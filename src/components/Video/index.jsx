@@ -8,7 +8,7 @@ const Video = ({ data, height }) => {
     const html = node.html;
     return (
         <div>
-            <p>{title}</p>
+            <h2 className={css.videoTitle}>{title}</h2>
             <div
                 style={{ height, width: '100%' }}
                 className={css.ytIframe}
