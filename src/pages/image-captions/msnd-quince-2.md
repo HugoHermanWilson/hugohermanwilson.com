@@ -1,5 +1,5 @@
 ---
-imageFilename: 28577400_10155957660145428_2816639068341002976_n
+imageFilename: msnd-quince-2
 # caption: Shows when the image is opened in Lightbox mode
 caption: Quince, Benjamin Britten’s A Midsummer Night’s Dream, presented by The
   Royal College of Music International Opera School
