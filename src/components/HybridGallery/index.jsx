@@ -65,7 +65,12 @@ function HybridGallery({ photos }) {
 
     return (
         <div>
-            <Gallery photos={images} direction="row" onClick={openLightbox} />
+            <Gallery
+                photos={images}
+                direction="row"
+                targetRowHeight="400" // try fix weird pulsating appearance of gallery
+                onClick={openLightbox}
+            />
             <ModalGateway>
                 {viewerIsOpen ? (
                     <Modal onClose={closeLightbox}>
