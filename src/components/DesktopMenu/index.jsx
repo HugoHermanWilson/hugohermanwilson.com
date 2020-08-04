@@ -17,51 +17,31 @@ export default function DesktopMenu(props) {
             className={`title-font ${css.container}
             ${css[menuStateClass(props)]}`}
         >
-            <a
-                className={`${css.item} ${
-                    isActive('/biography') ? css.active : ''
-                }`}
-                href="/biography"
-                role="menuitem"
-            >
-                Biography
-            </a>
-            <a
-                className={`${css.item} ${
-                    isActive('/listen') ? css.active : ''
-                }`}
-                href="/listen"
-                role="menuitem"
-            >
-                Listen
-            </a>
-            <a
-                className={`${css.item} ${
-                    isActive('/gallery') ? css.active : ''
-                }`}
-                href="/gallery"
-                role="menuitem"
-            >
-                Gallery
-            </a>
-            <a
-                className={`${css.item} ${
-                    isActive('/diary') ? css.active : ''
-                }`}
-                href="/diary"
-                role="menuitem"
-            >
-                Diary
-            </a>
-            <a
-                className={`${css.item} ${
-                    isActive('/contact') ? css.active : ''
-                }`}
-                href="/contact"
-                role="menuitem"
-            >
-                Contact
-            </a>
+            {!isActive('/biography') ? (
+                <a className={css.item} href="/biography" role="menuitem">
+                    Biography
+                </a>
+            ) : null}
+            {!isActive('/listen') ? (
+                <a className={css.item} href="/listen" role="menuitem">
+                    Listen
+                </a>
+            ) : null}
+            {!isActive('/gallery') ? (
+                <a className={css.item} href="/gallery" role="menuitem">
+                    Gallery
+                </a>
+            ) : null}
+            {!isActive('/diary') ? (
+                <a className={css.item} href="/diary" role="menuitem">
+                    Diary
+                </a>
+            ) : null}
+            {!isActive('/contact') ? (
+                <a className={css.item} href="/contact" role="menuitem">
+                    Contact
+                </a>
+            ) : null}
         </nav>
     );
 }
