@@ -9,7 +9,7 @@ export default function DesktopMenu(props) {
 
     const isActive = path => {
         if (typeof window !== 'undefined') {
-            return window.location.pathname === path;
+            return new RegExp(path).test(window.location.pathname);
         }
         return false;
     };
