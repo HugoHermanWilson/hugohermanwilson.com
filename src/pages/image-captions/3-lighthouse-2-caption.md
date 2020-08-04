@@ -1,5 +1,5 @@
 ---
-imageFilename: lighthouse-4
+imageFilename: 3-lighthouse-2
 # caption: Shows when the image is opened in Lightbox mode
 caption: Blazes, The Lighthouse
 ---
