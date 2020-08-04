@@ -42,10 +42,8 @@ export default function GalleryPage(props) {
 export const imagesQuery = graphql`
     query ImageQuery {
         allFile(
-            filter: {
-                name: { ne: "splash-image" }
-                absolutePath: { regex: "//assets/" }
-            }
+            filter: { absolutePath: { regex: "//assets/" } }
+            sort: { fields: relativePath, order: DESC }
         ) {
             edges {
                 node {
