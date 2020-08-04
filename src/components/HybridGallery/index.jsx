@@ -9,6 +9,7 @@ import PropTypes from 'prop-types';
 import Gallery from 'react-photo-gallery';
 import Carousel, { Modal, ModalGateway } from 'react-images';
 import { debounce } from './utils';
+import css from './index.module.css';
 
 function HybridGallery({ photos }) {
     const [images, setImages] = useState(photos.slice(0, 6));
@@ -50,8 +51,15 @@ function HybridGallery({ photos }) {
         };
     });
 
+    useEffect(() => {
+        setTimeout(() => {
+            setIsVisible(true);
+        }, 100);
+    }, []);
+
     const [currentImage, setCurrentImage] = useState(0);
     const [viewerIsOpen, setViewerIsOpen] = useState(false);
+    const [isVisible, setIsVisible] = useState(false);
 
     const openLightbox = useCallback((event, { index }) => {
         setCurrentImage(index);
@@ -64,7 +72,9 @@ function HybridGallery({ photos }) {
     };
 
     return (
-        <div>
+        <div
+            className={`${isVisible ? css.visible : css.hidden} ${css.gallery}`}
+        >
             <Gallery
                 photos={images}
                 direction="row"

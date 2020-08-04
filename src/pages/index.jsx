@@ -18,7 +18,7 @@ class SplashPage extends React.Component {
         this.calculateSplashImageHeight();
         setTimeout(() => {
             this.setState({ visibility: 'visible' });
-        }, 20);
+        }, 100);
     }
 
     calculateSplashImageHeight = () => {

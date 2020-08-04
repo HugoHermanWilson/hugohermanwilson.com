@@ -1,0 +1,11 @@
+.gallery {
+    transition: opacity 0.5s linear;
+}
+
+.hidden {
+    opacity: 0;
+}
+
+.visible {
+    opacity: 1;
+}
