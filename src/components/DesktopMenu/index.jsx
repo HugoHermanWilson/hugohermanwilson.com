@@ -8,7 +8,10 @@ export default function DesktopMenu(props) {
     };
 
     const isActive = path => {
-        return window.location.pathname === path;
+        if (window) {
+            return window.location.pathname === path;
+        }
+        return false;
     };
 
     return (
