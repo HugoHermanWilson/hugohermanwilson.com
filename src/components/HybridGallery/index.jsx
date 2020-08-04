@@ -51,15 +51,16 @@ function HybridGallery({ photos }) {
         };
     });
 
+    const [currentImage, setCurrentImage] = useState(0);
+    const [viewerIsOpen, setViewerIsOpen] = useState(false);
+    const [isVisible, setIsVisible] = useState(false);
+
     useEffect(() => {
+        // make gallery fade in
         setTimeout(() => {
             setIsVisible(true);
         }, 100);
     }, []);
-
-    const [currentImage, setCurrentImage] = useState(0);
-    const [viewerIsOpen, setViewerIsOpen] = useState(false);
-    const [isVisible, setIsVisible] = useState(false);
 
     const openLightbox = useCallback((event, { index }) => {
         setCurrentImage(index);
