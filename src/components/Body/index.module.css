@@ -4,12 +4,11 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 1rem;
 }
 
 .body {
     margin: 1rem;
-    padding: 2rem 1rem;
+    padding: 1rem 1rem 2rem 1rem;
     width: 100%;
     box-sizing: border-box;
     display: flex;
@@ -29,7 +28,6 @@
 @media screen and (min-width: 500px){
     /* Larger than mobile - tablet and desktop */
     .body {
-        margin-top: 2rem;
         width: 80vw;
     }
 }
@@ -37,7 +35,6 @@
 @media screen and (min-width: 800px){
     /* Larger than tablet - desktop */
     .body {
-        margin-top: 2rem;
         width: 70vw;
     }
 }
