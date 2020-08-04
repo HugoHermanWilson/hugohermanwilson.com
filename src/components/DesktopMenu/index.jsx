@@ -7,25 +7,59 @@ export default function DesktopMenu(props) {
         return props.visible ? 'visible' : 'hidden';
     };
 
+    const isActive = path => {
+        return window.location.pathname === path;
+    };
+
     return (
         <nav
             id="DesktopMenu"
             className={`title-font ${css.container}
             ${css[menuStateClass(props)]}`}
         >
-            <a className={css.item} href="/biography" role="menuitem">
+            <a
+                className={`${css.item} ${
+                    isActive('/biography') ? css.active : ''
+                }`}
+                href="/biography"
+                role="menuitem"
+            >
                 Biography
             </a>
-            <a className={css.item} href="/listen" role="menuitem">
+            <a
+                className={`${css.item} ${
+                    isActive('/listen') ? css.active : ''
+                }`}
+                href="/listen"
+                role="menuitem"
+            >
                 Listen
             </a>
-            <a className={css.item} href="/gallery" role="menuitem">
+            <a
+                className={`${css.item} ${
+                    isActive('/gallery') ? css.active : ''
+                }`}
+                href="/gallery"
+                role="menuitem"
+            >
                 Gallery
             </a>
-            <a className={css.item} href="/diary" role="menuitem">
+            <a
+                className={`${css.item} ${
+                    isActive('/diary') ? css.active : ''
+                }`}
+                href="/diary"
+                role="menuitem"
+            >
                 Diary
             </a>
-            <a className={css.item} href="/contact" role="menuitem">
+            <a
+                className={`${css.item} ${
+                    isActive('/contact') ? css.active : ''
+                }`}
+                href="/contact"
+                role="menuitem"
+            >
                 Contact
             </a>
         </nav>

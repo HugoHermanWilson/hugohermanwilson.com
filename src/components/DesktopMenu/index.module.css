@@ -23,10 +23,15 @@
 
 .item:hover{
     color: #f7c6df;
+    transform: scale(1.1);
 }
 
 .item:active{
     color: #f7c6df;
+}
+
+.active{
+    color: #f7c6df !important;
 }
 
 @media screen and (min-width: 1000px){
