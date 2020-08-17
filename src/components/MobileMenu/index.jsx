@@ -16,7 +16,6 @@ export default function MobileMenu(props) {
             className={`title-font ${css.container} ${
                 css[menuStateClass(props)]
             }`}
-            role="menu"
         >
             <Icon
                 className={`${css.item} ${css.icon}`}
