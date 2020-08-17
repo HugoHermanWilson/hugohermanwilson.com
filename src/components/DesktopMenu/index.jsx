@@ -3,13 +3,6 @@ import { Link } from 'gatsby';
 import css from './index.module.css';
 
 export default function DesktopMenu() {
-    const isActive = path => {
-        if (typeof window !== 'undefined') {
-            return new RegExp(path).test(window.location.pathname);
-        }
-        return false;
-    };
-
     return (
         <nav id="DesktopMenu" className={`title-font ${css.container}`}>
             <Link
