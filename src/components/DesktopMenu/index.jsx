@@ -20,27 +20,27 @@ export default function DesktopMenu(props) {
             className={`title-font ${css.container}
             ${css[menuStateClass(props)]}`}
         >
-            {!isActive('/biography') ? (
+            {!isActive('biography') ? (
                 <a className={css.item} href="/biography" role="menuitem">
                     Biography
                 </a>
             ) : null}
-            {!isActive('/listen') ? (
+            {!isActive('listen') ? (
                 <a className={css.item} href="/listen" role="menuitem">
                     Listen
                 </a>
             ) : null}
-            {!isActive('/gallery') ? (
+            {!isActive('gallery') ? (
                 <a className={css.item} href="/gallery" role="menuitem">
                     Gallery
                 </a>
             ) : null}
-            {!isActive('/diary') ? (
+            {!isActive('diary') ? (
                 <a className={css.item} href="/diary" role="menuitem">
                     Diary
                 </a>
             ) : null}
-            {!isActive('/contact') ? (
+            {!isActive('contact') ? (
                 <a className={css.item} href="/contact" role="menuitem">
                     Contact
                 </a>
