@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'gatsby';
 import css from './index.module.css';
 
 export default function DesktopMenu() {
@@ -11,47 +12,46 @@ export default function DesktopMenu() {
 
     return (
         <nav id="DesktopMenu" className={`title-font ${css.container}`}>
-            <a
-                className={`${css.item} ${
-                    isActive('biography') ? 'd-none' : ''
-                }`}
-                href="biography"
+            <Link
+                to="/biography"
+                activeClassName="d-none"
+                className={css.item}
                 role="menuitem"
             >
                 Biography
-            </a>
-
-            <a
-                className={`${css.item} ${isActive('listen') ? 'd-none' : ''}`}
-                href="listen"
+            </Link>
+            <Link
+                to="/listen"
+                activeClassName="d-none"
+                className={css.item}
                 role="menuitem"
             >
                 Listen
-            </a>
-
-            <a
-                className={`${css.item} ${isActive('gallery') ? 'd-none' : ''}`}
-                href="gallery"
+            </Link>
+            <Link
+                to="/gallery"
+                activeClassName="d-none"
+                className={css.item}
                 role="menuitem"
             >
                 Gallery
-            </a>
-
-            <a
-                className={`${css.item} ${isActive('diary') ? 'd-none' : ''}`}
-                href="diary"
+            </Link>
+            <Link
+                to="/diary"
+                activeClassName="d-none"
+                className={css.item}
                 role="menuitem"
             >
                 Diary
-            </a>
-
-            <a
-                className={`${css.item} ${isActive('contact') ? 'd-none' : ''}`}
-                href="contact"
+            </Link>
+            <Link
+                to="/contact"
+                activeClassName="d-none"
+                className={css.item}
                 role="menuitem"
             >
                 Contact
-            </a>
+            </Link>
         </nav>
     );
 }

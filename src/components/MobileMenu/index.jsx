@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'gatsby';
 import { Icon } from 'semantic-ui-react';
 import css from './index.module.css';
 import 'fomantic-ui-css/components/icon.min.css';
@@ -23,21 +24,21 @@ export default function MobileMenu(props) {
                 onClick={props.toggleMenu}
                 role="button"
             />
-            <a className={css.item} href="/biography" role="menuitem">
+            <Link to="/biography" className={css.item} role="menuitem">
                 Biography
-            </a>
-            <a className={css.item} href="/listen" role="menuitem">
+            </Link>
+            <Link to="/listen" className={css.item} role="menuitem">
                 Listen
-            </a>
-            <a className={css.item} href="/gallery" role="menuitem">
+            </Link>
+            <Link to="/gallery" className={css.item} role="menuitem">
                 Gallery
-            </a>
-            <a className={css.item} href="/diary" role="menuitem">
+            </Link>
+            <Link to="/diary" className={css.item} role="menuitem">
                 Diary
-            </a>
-            <a className={css.item} href="/contact" role="menuitem">
+            </Link>
+            <Link to="/contact" className={css.item} role="menuitem">
                 Contact
-            </a>
+            </Link>
         </nav>
     );
 }
