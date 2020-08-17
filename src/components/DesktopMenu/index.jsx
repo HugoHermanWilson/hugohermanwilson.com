@@ -1,12 +1,7 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import css from './index.module.css';
 
-export default function DesktopMenu(props) {
-    const menuStateClass = () => {
-        return props.visible ? 'visible' : 'hidden';
-    };
-
+export default function DesktopMenu() {
     const isActive = path => {
         if (typeof window !== 'undefined') {
             return new RegExp(path).test(window.location.pathname);
@@ -15,11 +10,7 @@ export default function DesktopMenu(props) {
     };
 
     return (
-        <nav
-            id="DesktopMenu"
-            className={`title-font ${css.container}
-            ${css[menuStateClass(props)]}`}
-        >
+        <nav id="DesktopMenu" className={`title-font ${css.container}`}>
             <a
                 className={`${css.item} ${
                     isActive('biography') ? 'd-none' : ''
@@ -64,11 +55,3 @@ export default function DesktopMenu(props) {
         </nav>
     );
 }
-
-DesktopMenu.propTypes = {
-    visible: PropTypes.bool
-};
-
-DesktopMenu.defaultProps = {
-    visible: true
-};
