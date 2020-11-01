@@ -1,6 +1,6 @@
 import React from 'react';
 import Template from '../layouts/Template';
-import Menu from '../components/Menu';
+import Menu from '../components/navigation/Menu';
 import Body from '../components/Body';
 
 export default function Missing404() {

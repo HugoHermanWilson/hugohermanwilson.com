@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import SplashLayout from '../layouts/SplashLayout';
 import SplashImage from '../components/splash/SplashImage';
-import Menu from '../components/Menu';
+import Menu from '../components/navigation/Menu';
 
 class SplashPage extends React.Component {
     constructor(props) {

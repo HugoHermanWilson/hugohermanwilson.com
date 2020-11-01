@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import moment from 'moment';
 import Template from '../layouts/Template';
-import Menu from '../components/Menu';
+import Menu from '../components/navigation/Menu';
 import Body from '../components/Body';
 import Event from '../components/Event';
 import NoEvent from '../components/NoEvent';

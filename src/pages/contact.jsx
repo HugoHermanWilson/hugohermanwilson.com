@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Template from '../layouts/Template';
-import Menu from '../components/Menu';
+import Menu from '../components/navigation/Menu';
 import Body from '../components/Body';
 import ContactForm from '../components/ContactForm';
 
