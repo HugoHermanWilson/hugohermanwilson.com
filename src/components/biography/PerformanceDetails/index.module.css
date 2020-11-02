@@ -1,0 +1,25 @@
+.container {
+    margin: 0.5rem;
+}
+
+.title {
+    margin: 0;
+    display: inline-block;
+    font-size: 1rem;
+}
+
+.company {
+    margin: 0;
+    color: #696969;
+}
+
+.opera {
+    margin: 0;
+    display: inline-block;
+    margin-left: 0.5rem;
+    font-style: italic;
+}
+
+.opera::before {
+    content: '- ';
+}

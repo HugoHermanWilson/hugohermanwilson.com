@@ -4,17 +4,17 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import css from './index.module.css';
 
-export default function BiographyItem(props) {
-    const isOpera = () => {
-        return !!props.data.frontmatter.isOpera;
-    };
-
+export default function PerformanceDetails(props) {
     const isRecital = () => {
         return !!props.data.frontmatter.isRecital;
     };
 
-    const formattedRecitalName = () => {
-        // addresses situations where a BiographyItem's name includes the piece of music!
+    const isOratorio = () => {
+        return !!props.data.frontmatter.isOratorio;
+    };
+
+    const formattedName = () => {
+        // addresses situations where name includes the piece of music - needs to be italicised
         // omg the effort for this little edge case
         let recital = props.data.frontmatter.recital;
 
@@ -32,21 +32,8 @@ export default function BiographyItem(props) {
         return recital;
     };
 
-    const operaDetails = () => {
-        return (
-            <div
-                id={`BiographyItem-opera-${props.index}`}
-                className={css.container}
-            >
-                <h5 className={css.title}>{props.data.frontmatter.role}</h5>
-                <p className={css.opera}>{props.data.frontmatter.opera}</p>
-                <p className={css.company}>{props.data.frontmatter.company}</p>
-            </div>
-        );
-    };
-
-    const recitalDetails = () => {
-        const recitalName = formattedRecitalName(props);
+    if (isRecital(props) || isOratorio(props)) {
+        const nameHTML = formattedName(props);
 
         return (
             <div
@@ -56,33 +43,23 @@ export default function BiographyItem(props) {
                 <h5
                     className={css.title}
                     dangerouslySetInnerHTML={{
-                        __html: recitalName
+                        __html: nameHTML
                     }}
                 />
                 <p className={css.company}>{props.data.frontmatter.company}</p>
             </div>
         );
-    };
-
-    if (isOpera(props)) {
-        return operaDetails(props);
     }
 
-    if (isRecital(props)) {
-        return recitalDetails(props);
-    }
-
-    return <div id="bad-file" />;
+    return null; // bad data
 }
 
-BiographyItem.propTypes = {
+PerformanceDetails.propTypes = {
     index: PropTypes.number.isRequired,
     data: PropTypes.shape({
         frontmatter: PropTypes.shape({
-            isOpera: PropTypes.bool,
-            role: PropTypes.string.isRequired,
-            opera: PropTypes.string.isRequired,
             isRecital: PropTypes.bool,
+            isOratorio: PropTypes.bool,
             recital: PropTypes.string.isRequired,
             company: PropTypes.string.isRequired
         }),
