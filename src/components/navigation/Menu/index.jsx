@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Icon } from 'semantic-ui-react';
 import css from './index.module.css';
@@ -6,20 +6,15 @@ import 'fomantic-ui-css/components/icon.min.css';
 import MobileMenu from '../MobileMenu';
 import DesktopMenu from '../DesktopMenu';
 
-export default class Menu extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            menuOpen: false
-        };
-    }
+const Menu = props => {
+    const [menuOpen, setMenuOpen] = useState(false);
 
-    toggleMenuOpen = () => {
-        this.setState(prevState => ({ menuOpen: !prevState.menuOpen }));
+    const toggleMenuOpen = () => {
+        setMenuOpen(!menuOpen);
     };
 
-    getCorrectHeaderTags = () => {
-        if (this.props.path === '/') {
+    const getCorrectHeaderTags = () => {
+        if (props.path === '/') {
             return (
                 <>
                     <h1 className={`${css.mainHeader}`}>
@@ -47,37 +42,32 @@ export default class Menu extends React.Component {
         );
     };
 
-    render() {
-        return (
-            <div
-                id="Menu"
-                className={`title-font ${css.container} ${
-                    css[this.props.visiblity]
-                }`}
-                ref={this.props.menuRef}
-            >
-                {this.getCorrectHeaderTags()}
+    return (
+        <div
+            id="Menu"
+            className={`title-font ${css.container} ${css[props.visiblity]}`}
+            ref={props.menuRef}
+        >
+            {getCorrectHeaderTags()}
 
-                <div
-                    className={`${css.oneLine} ${css.subHeader} ${css.alignRight} ${css.menuIcon}`}
-                >
-                    <Icon
-                        name="bars"
-                        onClick={this.toggleMenuOpen}
-                        aria-haspopup="true"
-                        aria-controls="MobileMenu"
-                        aria-expanded={this.state.menuOpen}
-                    />
-                </div>
-                <MobileMenu
-                    toggleMenu={this.toggleMenuOpen}
-                    visible={this.state.menuOpen}
+            <div
+                className={`${css.oneLine} ${css.subHeader} ${css.alignRight} ${css.menuIcon}`}
+            >
+                <Icon
+                    name="bars"
+                    onClick={toggleMenuOpen}
+                    aria-haspopup="true"
+                    aria-controls="MobileMenu"
+                    aria-expanded={menuOpen}
                 />
-                <DesktopMenu />
             </div>
-        );
-    }
-}
+            <MobileMenu toggleMenu={toggleMenuOpen} visible={menuOpen} />
+            <DesktopMenu />
+        </div>
+    );
+};
+
+export default Menu;
 
 Menu.propTypes = {
     visiblity: PropTypes.string,
