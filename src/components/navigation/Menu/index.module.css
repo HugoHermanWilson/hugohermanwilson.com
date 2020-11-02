@@ -36,22 +36,20 @@
 
 .menuIcon {
     color: #fff;
-    display:block;
+    display: block;
 }
 
 .alignRight {
     float: right;
     margin: 10px 0 10px 0;
-    margin-right: calc(
-        (100vw - (12vw * 8)) - 10px
-    );
+    margin-right: calc((100vw - (12vw * 8)) - 10px);
 }
 
 .oneLine {
     display: inline-block;
 }
 
-@media screen and (min-width: 600px){
+@media screen and (min-width: 600px) {
     /* Larger than mobile - tablet and desktop */
     .mainHeader {
         font-size: 8vw;
@@ -59,7 +57,9 @@
 
     .subHeader {
         font-size: 6vw;
-        margin-left: calc((100vw - (8vw * 9.9)) - 10px); /* don't know how I got this but it works! */
+        margin-left: calc(
+            (100vw - (8vw * 9.9)) - 10px
+        ); /* don't know how I got this but it works! */
     }
 
     .alignRight {
@@ -68,10 +68,10 @@
     }
 }
 
-@media screen and (min-width: 1000px){
+@media screen and (min-width: 1000px) {
     /* Larger than tablet - desktop */
     .mainHeader {
-        font-size: 7vw;
+        font-size: 5.5rem;
         display: inline-block;
         width: 70%;
         box-sizing: border-box;
@@ -79,29 +79,30 @@
     }
 
     .subHeader {
-        font-size: 5vw;
-        margin-left: calc((100vw - (7vw * 11)) - 10px); /* don't know how I got this but it works! */
+        font-size: 5.5rem;
+        margin-left: calc(
+            (100vw - (7vw * 11)) - 10px
+        ); /* don't know how I got this but it works! */
     }
 
     .menuIcon {
-        display:none;
+        display: none;
     }
 
     .baritone {
-        font-size: 7vw;
+        font-size: 5.5rem;
         display: inline-block;
         width: 30%;
         box-sizing: border-box;
         text-align: start;
         margin: 0;
     }
-
 }
 
 .hidden {
-    opacity:0;
+    opacity: 0;
 }
 
 .visible {
-    opacity:1;
+    opacity: 1;
 }
