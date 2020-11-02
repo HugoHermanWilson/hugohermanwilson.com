@@ -7,7 +7,7 @@ export default function DesktopMenu() {
         <nav id="DesktopMenu" className={`title-font ${css.container}`}>
             <Link
                 to="/biography"
-                activeClassName="d-none"
+                activeClassName={css.active}
                 className={css.item}
                 role="menuitem"
             >
@@ -15,7 +15,7 @@ export default function DesktopMenu() {
             </Link>
             <Link
                 to="/listen"
-                activeClassName="d-none"
+                activeClassName={css.active}
                 className={css.item}
                 role="menuitem"
             >
@@ -23,7 +23,7 @@ export default function DesktopMenu() {
             </Link>
             <Link
                 to="/gallery"
-                activeClassName="d-none"
+                activeClassName={css.active}
                 className={css.item}
                 role="menuitem"
             >
@@ -31,7 +31,7 @@ export default function DesktopMenu() {
             </Link>
             <Link
                 to="/diary"
-                activeClassName="d-none"
+                activeClassName={css.active}
                 className={css.item}
                 role="menuitem"
             >
@@ -39,7 +39,7 @@ export default function DesktopMenu() {
             </Link>
             <Link
                 to="/contact"
-                activeClassName="d-none"
+                activeClassName={css.active}
                 className={css.item}
                 role="menuitem"
             >

@@ -23,19 +23,44 @@ export default function MobileMenu(props) {
                 onClick={props.toggleMenu}
                 role="button"
             />
-            <Link to="/biography" className={css.item} role="menuitem">
+            <Link
+                to="/biography"
+                className={css.item}
+                activeClassName={css.active}
+                role="menuitem"
+            >
                 Biography
             </Link>
-            <Link to="/listen" className={css.item} role="menuitem">
+            <Link
+                to="/listen"
+                className={css.item}
+                activeClassName={css.active}
+                role="menuitem"
+            >
                 Listen
             </Link>
-            <Link to="/gallery" className={css.item} role="menuitem">
+            <Link
+                to="/gallery"
+                className={css.item}
+                activeClassName={css.active}
+                role="menuitem"
+            >
                 Gallery
             </Link>
-            <Link to="/diary" className={css.item} role="menuitem">
+            <Link
+                to="/diary"
+                className={css.item}
+                activeClassName={css.active}
+                role="menuitem"
+            >
                 Diary
             </Link>
-            <Link to="/contact" className={css.item} role="menuitem">
+            <Link
+                to="/contact"
+                className={css.item}
+                activeClassName={css.active}
+                role="menuitem"
+            >
                 Contact
             </Link>
         </nav>

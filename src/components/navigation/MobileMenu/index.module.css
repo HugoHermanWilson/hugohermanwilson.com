@@ -6,7 +6,7 @@
 
     /* add slide open effect for menu */
     transition: height 0.3s linear;
-    overflow: hidden; 
+    overflow: hidden;
     z-index: 1;
 
     display: flex;
@@ -17,15 +17,17 @@
     font-size: 4rem;
     text-align: center;
     color: white;
-    background-color: rgba(0,0,0,0.8);
+    background-color: rgba(0, 0, 0, 0.8);
     backdrop-filter: blur(10px);
-
 }
 
 @supports not (backdrop-filter: blur(10px)) {
-  .container {
-    background-image: linear-gradient(rgba(0,0,0,1) 0%, rgba(0,0,0,0.8) 100%);
-  }
+    .container {
+        background-image: linear-gradient(
+            rgba(0, 0, 0, 1) 0%,
+            rgba(0, 0, 0, 0.8) 100%
+        );
+    }
 }
 
 .hidden {
@@ -36,30 +38,29 @@
     height: 100vh;
 }
 
-
 .item {
     margin: 10px;
     text-decoration: none;
     z-index: 100;
 }
 
-.item:first-child{
+.item:first-child {
     margin-top: 2rem;
 }
 
-.item:link{
+.item:link {
     color: white;
 }
 
-.item:visited{
+.item:visited {
     color: white;
 }
 
-.item:hover{
+.item:hover {
     color: #f7c6df;
 }
 
-.item:active{
+.item:active {
     color: #f7c6df;
 }
 
@@ -69,7 +70,11 @@
     color: #f7c6df;
 }
 
-@media screen and (min-width: 1000px){
+.active {
+    color: #f7c6df !important;
+}
+
+@media screen and (min-width: 1000px) {
     /* Larger than tablet - desktop */
     .container {
         display: none;
