@@ -32,7 +32,9 @@ export default function GalleryPage(props) {
         <Template>
             <Menu path={props.location.pathname} />
             <Body className=" center-text body-font">
-                <h1 className="title-font large-text">Gallery</h1>
+                <h1 className="title-font large-text d-none-desktop-only">
+                    Gallery
+                </h1>
                 <HybridGallery photos={photos} />
             </Body>
         </Template>

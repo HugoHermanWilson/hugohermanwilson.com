@@ -14,7 +14,9 @@ export default function Listen(props) {
         <Template>
             <Menu path={props.location.pathname} />
             <Body className=" center-text body-font">
-                <h1 className="title-font large-text">Listen</h1>
+                <h1 className="title-font large-text d-none-desktop-only">
+                    Listen
+                </h1>
                 <VideoList videos={videos} />
             </Body>
         </Template>

@@ -70,7 +70,9 @@ function Diary(props) {
         <Template>
             <Menu path={props.location.pathname} />
             <Body className=" center-text body-font">
-                <h1 className="title-font large-text">Diary</h1>
+                <h1 className="title-font large-text d-none-desktop-only">
+                    Diary
+                </h1>
                 <Divider text="Coming up" />
                 {renderFutureEventList()}
                 <Divider text="Past events" />
