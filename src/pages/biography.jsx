@@ -5,7 +5,7 @@ import { graphql } from 'gatsby';
 import Template from '../layouts/Template';
 import Menu from '../components/navigation/Menu';
 import Body from '../components/Body';
-import BiographyItem from '../components/biography/BiographyItem';
+import BiographyList from '../components/biography/BiographyList';
 
 export default function Biography(props) {
     const biographyText = props.data.allMarkdownRemark.edges.filter(edge => {
@@ -25,17 +25,11 @@ export default function Biography(props) {
         );
     });
 
-    const solosList = solos => {
-        return solos.map(({ node }, index) => {
-            return (
-                <BiographyItem
-                    key={node.fields.slug}
-                    data={node}
-                    index={index + 1}
-                />
-            );
-        });
-    };
+    const oratorioSolos = props.data.allMarkdownRemark.edges.filter(edge => {
+        return (
+            edge.node.fields && edge.node.fields.slug.match(/solos\/oratorios/)
+        );
+    });
 
     return (
         <Template>
@@ -56,18 +50,24 @@ export default function Biography(props) {
                     />
                 </div>
                 <p>Recent solo highlights include:</p>
-                <div className="responsiveColumns">
-                    {/* Components made from /src/pages/biography/solos/operas  */}
-                    <div className="left-text responsiveColumn">
-                        <h3 className="title-font center-text">Operas</h3>
-                        {solosList(operaSolos)}
-                    </div>
-                    {/* Components made from /src/pages/biography/solos/recitals  */}
-                    <div className="left-text responsiveColumn">
-                        <h3 className="title-font center-text">Recitals</h3>
-                        {solosList(recitalSolos)}
-                    </div>
-                </div>
+                <BiographyList
+                    id="list-operas"
+                    type="opera"
+                    title="Operas"
+                    solos={operaSolos}
+                />
+                <BiographyList
+                    id="list-recitals"
+                    type="recital"
+                    title="Recitals"
+                    solos={recitalSolos}
+                />
+                <BiographyList
+                    id="list-oratorios"
+                    type="oratorio"
+                    title="Oratorio"
+                    solos={oratorioSolos}
+                />
             </Body>
         </Template>
     );
@@ -91,6 +91,7 @@ export const biographyQuery = graphql`
                         isRecital
                         recital
                         company
+                        isOratorio
                     }
                     html
                 }
