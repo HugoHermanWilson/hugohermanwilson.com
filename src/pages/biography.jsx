@@ -63,7 +63,7 @@ export default function Biography(props) {
                 <BiographyList
                     id="list-oratorios"
                     type="oratorio"
-                    title="Oratoria"
+                    title="Oratorio"
                     solos={oratorioSolos}
                 />
             </Body>

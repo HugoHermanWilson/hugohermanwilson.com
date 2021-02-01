@@ -1,8 +1,8 @@
 ---
 isOratorio: true
 # recital: Use underscores to italicise titles, e.g Vaughan Williams' _Serenade to Music_
-recital: 'Sarah Birthday Oratario _WAP_'
-company: '(Little Garage)'
+recital: "Bach's _St. John Passion_"
+company: '(Snape Maltings)'
 # approxDate: use YYYY-MM-DD format. This data's used in the CMS only
-approxDate: 2017-01-01
+approxDate: 2019-01-01
 ---
